@@ -1,13 +1,21 @@
 <script>
-  export let doorNumber=12;
-    function toggleDoor() {
+  export let doorNumber = 12;
+  export let canOpen = true;
+  export let imagePath = "";
+  let doorOpen = false;
+
+  function toggleDoor() {
+    if(canOpen){
       doorOpen=!doorOpen
+    }else{
+      doorOpen=false;
     }
-    let doorOpen = false;
+  }
+
 </script>
 
 <main>
-    <div class="backDoor" >
+    <div class="backDoor" style="--imagePath: url({imagePath})">
         <div class="backgroundPicture"></div>
         <div class="door"     class:doorOpen={doorOpen} 
         on:click={toggleDoor} 
@@ -40,7 +48,7 @@
 .backgroundPicture {
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("https://www.xn--icne-wqa.com/images/icones/2/6/christmas-tree.png");
+  background-image: var(--imagePath);
   width: var(--door-width);
   height: var(--door-height);
   background-position: center;
