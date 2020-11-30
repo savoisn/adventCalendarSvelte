@@ -21,13 +21,13 @@ import { onMount } from 'svelte';
 	let rewards = {
 		0:{
 			imagePath:"images/christmas-tree.png",
-			text:"une petite phrase un peu longue pour etre jolie et encore plus longue pour voir si ca depasse en dessous dans le dessous du dessous",
-			link:"http://google.com/"
+			rewardText:"une petite phrase un peu longue pour etre jolie et encore plus longue pour voir si ca depasse en dessous dans le dessous du dessous",
+			rewardLink:"http://google.com/"
 		},
 		1:{
 			imagePath:"images/christmas-tree.png",
-			text:"une petite phrase un peu longue pour etre jolie",
-			link:"http://yahoo.com/"
+			rewardText:"une petite phrase un peu longue pour etre jolie",
+			rewardLink:"http://yahoo.com/"
 		}
 	}
 
@@ -67,8 +67,8 @@ import { onMount } from 'svelte';
 		<div class="column">
 		<Door 
 			imagePath = {doorNumber.reward.imagePath}
-			rewardText = {doorNumber.reward.text}
-			rewardLink = {doorNumber.reward.link}
+			rewardText = {doorNumber.reward.rewardText}
+			rewardLink = {doorNumber.reward.rewardLink}
 			doorNumber = {doorNumber.day} 
 			canOpen={doorNumber.canOpen}/>
 		</div>
@@ -85,7 +85,7 @@ import { onMount } from 'svelte';
 		justify-content: flex-start;
 	}
 	main {
-		text-align: center;
+		rewardLink-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;

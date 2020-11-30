@@ -6,6 +6,9 @@
   export let rewardLink = "";
   let doorOpen = false;
 
+  console.log(rewardLink)
+  console.log(rewardText)
+
   function toggleDoor() {
     if(canOpen){
       doorOpen=!doorOpen
@@ -16,18 +19,9 @@
 </script>
 
 <main>
-    <div class="backDoor" style="--imagePath: url({imagePath})">
-      {#if rewardLink}
-        <a href={rewardLink} target="_blank">
-          <div class="backgroundPicture">
-            <div class="backgroundText">
-              <span class="bgSpan">
-                {rewardText}
-              </span>
-            </div>
-          </div>
-        </a>
-      {:else}
+  <div class="backDoor" style="--imagePath: url({imagePath})">
+    {#if rewardLink !== ""}
+      <a href={rewardLink} target="_blank">
         <div class="backgroundPicture">
           <div class="backgroundText">
             <span class="bgSpan">
@@ -35,13 +29,22 @@
             </span>
           </div>
         </div>
-      {/if}
-      <div class="door" 
-           class:doorOpen={doorOpen} 
-           on:click={toggleDoor} >
-        <span class="doorNumber">{doorNumber}</span>
+      </a>
+    {:else}
+      <div class="backgroundPicture">
+        <div class="backgroundText">
+          <span class="bgSpan">
+            {rewardText}
+          </span>
+        </div>
       </div>
+    {/if}
+    <div class="door" 
+          class:doorOpen={doorOpen} 
+          on:click={toggleDoor} >
+      <span class="doorNumber">{doorNumber}</span>
     </div>
+  </div>
 </main>
 
 <style>
