@@ -405,11 +405,11 @@ var app = (function () {
     			span = element("span");
     			t = text(/*rewardText*/ ctx[2]);
     			attr_dev(span, "class", "bgSpan svelte-1263e6i");
-    			add_location(span, file, 32, 12, 753);
+    			add_location(span, file, 32, 12, 769);
     			attr_dev(div0, "class", "backgroundText svelte-1263e6i");
-    			add_location(div0, file, 31, 10, 712);
+    			add_location(div0, file, 31, 10, 728);
     			attr_dev(div1, "class", "backgroundPicture svelte-1263e6i");
-    			add_location(div1, file, 30, 8, 670);
+    			add_location(div1, file, 30, 8, 686);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -452,12 +452,13 @@ var app = (function () {
     			span = element("span");
     			t = text(/*rewardText*/ ctx[2]);
     			attr_dev(span, "class", "bgSpan svelte-1263e6i");
-    			add_location(span, file, 23, 14, 526);
+    			add_location(span, file, 23, 14, 542);
     			attr_dev(div0, "class", "backgroundText svelte-1263e6i");
-    			add_location(div0, file, 22, 12, 483);
+    			add_location(div0, file, 22, 12, 499);
     			attr_dev(div1, "class", "backgroundPicture svelte-1263e6i");
-    			add_location(div1, file, 21, 10, 439);
+    			add_location(div1, file, 21, 10, 455);
     			attr_dev(a, "href", /*rewardLink*/ ctx[3]);
+    			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "svelte-1263e6i");
     			add_location(a, file, 20, 8, 407);
     		},
@@ -519,10 +520,10 @@ var app = (function () {
     			span = element("span");
     			t1 = text(/*doorNumber*/ ctx[0]);
     			attr_dev(span, "class", "doorNumber svelte-1263e6i");
-    			add_location(span, file, 41, 8, 972);
+    			add_location(span, file, 41, 8, 988);
     			attr_dev(div0, "class", "door svelte-1263e6i");
     			toggle_class(div0, "doorOpen", /*doorOpen*/ ctx[4]);
-    			add_location(div0, file, 38, 6, 872);
+    			add_location(div0, file, 38, 6, 888);
     			attr_dev(div1, "class", "backDoor svelte-1263e6i");
     			set_style(div1, "--imagePath", "url(" + /*imagePath*/ ctx[1] + ")");
     			add_location(div1, file, 18, 4, 315);
@@ -714,11 +715,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (67:2) {#each calendarDays as doorNumber}
+    // (66:2) {#each calendarDays as doorNumber}
     function create_each_block(ctx) {
     	let div;
     	let door;
@@ -727,11 +728,11 @@ var app = (function () {
 
     	door = new Door({
     			props: {
-    				imagePath: /*doorNumber*/ ctx[8].reward.imagePath,
-    				rewardText: /*doorNumber*/ ctx[8].reward.text,
-    				rewardLink: /*doorNumber*/ ctx[8].reward.link,
-    				doorNumber: /*doorNumber*/ ctx[8].day,
-    				canOpen: /*doorNumber*/ ctx[8].canOpen
+    				imagePath: /*doorNumber*/ ctx[9].reward.imagePath,
+    				rewardText: /*doorNumber*/ ctx[9].reward.text,
+    				rewardLink: /*doorNumber*/ ctx[9].reward.link,
+    				doorNumber: /*doorNumber*/ ctx[9].day,
+    				canOpen: /*doorNumber*/ ctx[9].canOpen
     			},
     			$$inline: true
     		});
@@ -742,7 +743,7 @@ var app = (function () {
     			create_component(door.$$.fragment);
     			t = space();
     			attr_dev(div, "class", "column");
-    			add_location(div, file$1, 67, 2, 1521);
+    			add_location(div, file$1, 66, 2, 1645);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -752,11 +753,11 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const door_changes = {};
-    			if (dirty & /*calendarDays*/ 2) door_changes.imagePath = /*doorNumber*/ ctx[8].reward.imagePath;
-    			if (dirty & /*calendarDays*/ 2) door_changes.rewardText = /*doorNumber*/ ctx[8].reward.text;
-    			if (dirty & /*calendarDays*/ 2) door_changes.rewardLink = /*doorNumber*/ ctx[8].reward.link;
-    			if (dirty & /*calendarDays*/ 2) door_changes.doorNumber = /*doorNumber*/ ctx[8].day;
-    			if (dirty & /*calendarDays*/ 2) door_changes.canOpen = /*doorNumber*/ ctx[8].canOpen;
+    			if (dirty & /*calendarDays*/ 2) door_changes.imagePath = /*doorNumber*/ ctx[9].reward.imagePath;
+    			if (dirty & /*calendarDays*/ 2) door_changes.rewardText = /*doorNumber*/ ctx[9].reward.text;
+    			if (dirty & /*calendarDays*/ 2) door_changes.rewardLink = /*doorNumber*/ ctx[9].reward.link;
+    			if (dirty & /*calendarDays*/ 2) door_changes.doorNumber = /*doorNumber*/ ctx[9].day;
+    			if (dirty & /*calendarDays*/ 2) door_changes.canOpen = /*doorNumber*/ ctx[9].canOpen;
     			door.$set(door_changes);
     		},
     		i: function intro(local) {
@@ -778,7 +779,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(67:2) {#each calendarDays as doorNumber}",
+    		source: "(66:2) {#each calendarDays as doorNumber}",
     		ctx
     	});
 
@@ -791,8 +792,10 @@ var app = (function () {
     	let t0;
     	let t1;
     	let t2;
-    	let p;
+    	let p0;
     	let t4;
+    	let p1;
+    	let t8;
     	let div;
     	let current;
     	let each_value = /*calendarDays*/ ctx[1];
@@ -814,9 +817,12 @@ var app = (function () {
     			t0 = text(/*name*/ ctx[0]);
     			t1 = text(" By Talan!");
     			t2 = space();
-    			p = element("p");
-    			p.textContent = "Made with love by TalanLabs";
+    			p0 = element("p");
+    			p0.textContent = "Made with love by TalanLabs";
     			t4 = space();
+    			p1 = element("p");
+    			p1.textContent = `Chaque jour un case peut etre ouverte a partir du ${/*startUpDateStr*/ ctx[2]} (pour tester avant le 01/12)`;
+    			t8 = space();
     			div = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -824,12 +830,13 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "svelte-dsxhtk");
-    			add_location(h1, file$1, 61, 1, 1390);
-    			add_location(p, file$1, 62, 1, 1417);
-    			attr_dev(main, "class", "svelte-dsxhtk");
-    			add_location(main, file$1, 60, 0, 1382);
+    			add_location(h1, file$1, 60, 1, 1418);
+    			add_location(p0, file$1, 61, 1, 1445);
+    			add_location(p1, file$1, 62, 1, 1481);
     			attr_dev(div, "class", "box svelte-dsxhtk");
-    			add_location(div, file$1, 65, 1, 1462);
+    			add_location(div, file$1, 64, 1, 1586);
+    			attr_dev(main, "class", "svelte-dsxhtk");
+    			add_location(main, file$1, 59, 0, 1410);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -840,9 +847,11 @@ var app = (function () {
     			append_dev(h1, t0);
     			append_dev(h1, t1);
     			append_dev(main, t2);
-    			append_dev(main, p);
-    			insert_dev(target, t4, anchor);
-    			insert_dev(target, div, anchor);
+    			append_dev(main, p0);
+    			append_dev(main, t4);
+    			append_dev(main, p1);
+    			append_dev(main, t8);
+    			append_dev(main, div);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div, null);
@@ -901,8 +910,6 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-    			if (detaching) detach_dev(t4);
-    			if (detaching) detach_dev(div);
     			destroy_each(each_blocks, detaching);
     		}
     	};
@@ -923,7 +930,8 @@ var app = (function () {
     	validate_slots("App", slots, []);
     	let { name = "" } = $$props;
     	let calendarDays = [];
-    	let startUpDate = Date.parse("2020-11-26T00:00+01:00");
+    	let startUpDateStr = "2020-11-26T00:00+01:00";
+    	let startUpDate = Date.parse(startUpDateStr);
     	let currentDate = Date.now();
     	let nbDays = 1;
 
@@ -985,6 +993,7 @@ var app = (function () {
     		Door,
     		onMount,
     		calendarDays,
+    		startUpDateStr,
     		startUpDate,
     		currentDate,
     		nbDays,
@@ -996,6 +1005,7 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     		if ("calendarDays" in $$props) $$invalidate(1, calendarDays = $$props.calendarDays);
+    		if ("startUpDateStr" in $$props) $$invalidate(2, startUpDateStr = $$props.startUpDateStr);
     		if ("startUpDate" in $$props) startUpDate = $$props.startUpDate;
     		if ("currentDate" in $$props) currentDate = $$props.currentDate;
     		if ("nbDays" in $$props) nbDays = $$props.nbDays;
@@ -1006,7 +1016,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, calendarDays];
+    	return [name, calendarDays, startUpDateStr];
     }
 
     class App extends SvelteComponentDev {

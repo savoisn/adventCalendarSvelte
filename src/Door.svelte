@@ -18,7 +18,7 @@
 <main>
     <div class="backDoor" style="--imagePath: url({imagePath})">
       {#if rewardLink}
-        <a href={rewardLink}>
+        <a href={rewardLink} target="_blank">
           <div class="backgroundPicture">
             <div class="backgroundText">
               <span class="bgSpan">

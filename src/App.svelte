@@ -6,8 +6,8 @@
 	import Door from './Door.svelte';
 import { onMount } from 'svelte';
 	let calendarDays = [];
-
-	let startUpDate = Date.parse("2020-11-26T00:00+01:00");
+	let startUpDateStr = "2020-11-26T00:00+01:00"
+	let startUpDate = Date.parse(startUpDateStr);
 
 	let currentDate = Date.now();
 
@@ -32,7 +32,7 @@ import { onMount } from 'svelte';
 	}
 
 	onMount(async () => {
-    await fetch(`http://worldclockapi.com/api/json/cet/now`)
+	await fetch(`http://worldclockapi.com/api/json/cet/now`)
 		.then(r => r.json())
 		.then(data => {
 			if(data.currentDateTime){
@@ -54,14 +54,13 @@ import { onMount } from 'svelte';
 	function canOpen(dayToCheck){
 		return (dayToCheck - nbDays <=0)
 	}
-    
 
 </script>
 
 <main>
 	<h1>{name} By Talan!</h1>
 	<p>Made with love by TalanLabs</p>
-</main>
+	<p>Chaque jour un case peut etre ouverte a partir du {startUpDateStr} (pour tester avant le 01/12)</p>
 
 	<div class = "box">
 		{#each calendarDays as doorNumber}
@@ -75,6 +74,8 @@ import { onMount } from 'svelte';
 		</div>
 		{/each}
 	</div>
+</main>
+
 
 <style>
 	.box{
