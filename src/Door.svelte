@@ -4,18 +4,17 @@
   export let imagePath = "";
   export let rewardText = "";
   export let rewardLink = "";
-  let doorOpen = false;
-
-  console.log(rewardLink)
-  console.log(rewardText)
+  export let doorOpen = false;
 
   function toggleDoor() {
     if(canOpen){
       doorOpen=!doorOpen
+      doorStore.addDoor(doorNumber)
     }else{
       doorOpen=false;
     }
-  }
+  } 
+	import doorStore from './store.js'
 </script>
 
 <main>

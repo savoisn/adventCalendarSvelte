@@ -4,9 +4,12 @@
 
 	export let name='';
 	import Door from './Door.svelte';
-import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
+
+	import doorStore from './store.js';
+
 	let calendarDays = [];
-	let startUpDateStr = "2020-11-26T00:00+01:00"
+	let startUpDateStr ="2020-11-26T00:00+01:00"
 	let startUpDate = Date.parse(startUpDateStr);
 
 	let currentDate = Date.now();
@@ -54,26 +57,32 @@ import { onMount } from 'svelte';
 	function canOpen(dayToCheck){
 		return (dayToCheck - nbDays <=0)
 	}
+    
 
 </script>
+
+<div>
+	ici {$doorStore}
+</div>
+
 
 <main>
 	<h1>{name} By Talan!</h1>
 	<p>Made with love by TalanLabs</p>
-	<p>Chaque jour un case peut etre ouverte a partir du {startUpDateStr} (pour tester avant le 01/12)</p>
+	<p> jour un case peut etre ouverte a partir du {startUpDateStr}</p>
 
 	<div class = "box">
 		{#each calendarDays as doorNumber}
-		<div class="column">
 		<Door 
 			imagePath = {doorNumber.reward.imagePath}
 			rewardText = {doorNumber.reward.rewardText}
 			rewardLink = {doorNumber.reward.rewardLink}
 			doorNumber = {doorNumber.day} 
+			doorOpen = {doorNumber.day <= $doorStore}
 			canOpen={doorNumber.canOpen}/>
-		</div>
 		{/each}
 	</div>
+
 </main>
 
 
@@ -84,8 +93,9 @@ import { onMount } from 'svelte';
 		flex-wrap: wrap;
 		justify-content: flex-start;
 	}
+
 	main {
-		rewardLink-align: center;
+		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
