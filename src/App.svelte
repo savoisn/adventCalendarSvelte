@@ -2,6 +2,7 @@
 	import 'bulma/css/bulma.css'
 	import '@fortawesome/fontawesome-free/css/all.css'
 
+	export let name='';
 	import Door from './Door.svelte';
 import { onMount } from 'svelte';
 	let calendarDays = [];
@@ -17,18 +18,24 @@ import { onMount } from 'svelte';
 		nbDays = Math.floor(diff / (1000 * 3600 * 24));
 	}
 
-	let rewards = [
-		"images/christmas-tree.png",
-		"images/christmas-tree.png"
-	]
+	let rewards = {
+		0:{
+			imagePath:"images/christmas-tree.png",
+			text:"une petite phrase un peu longue pour etre jolie et encore plus longue pour voir si ca depasse en dessous dans le dessous du dessous",
+			link:"http://google.com/"
+		},
+		1:{
+			imagePath:"images/christmas-tree.png",
+			text:"une petite phrase un peu longue pour etre jolie",
+			link:"http://yahoo.com/"
+		}
+	}
 
-	console.log(typeof(currentDate));
 	onMount(async () => {
     await fetch(`http://worldclockapi.com/api/json/cet/now`)
 		.then(r => r.json())
 		.then(data => {
 			if(data.currentDateTime){
-				console.log(data.currentDateTime);
 				currentDate = Date.parse(data.currentDateTime);
 				defineNbDays()
 				for(let i in [...Array(25).keys()] ){
@@ -36,13 +43,12 @@ import { onMount } from 'svelte';
 					calendarDays.push({
 						day:day, 
 						canOpen:canOpen(day),
-						reward:rewards[day-1]
+						reward:rewards[day-1]?rewards[day-1]:""
 					})
 				}
 				calendarDays = calendarDays
 			}
 		});
-
 	})
 
     function canOpen(dayToCheck){
@@ -53,7 +59,7 @@ import { onMount } from 'svelte';
 </script>
 
 <main>
-	<h1>Advent Calendar By NSA!</h1>
+	<h1>{name} By NSA!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
@@ -61,9 +67,11 @@ import { onMount } from 'svelte';
 		{#each calendarDays as doorNumber}
 		<div class="column">
 		<Door 
-		imagePath = {doorNumber.reward}
-		doorNumber = {doorNumber.day} 
-		canOpen={doorNumber.canOpen}/>
+			imagePath = {doorNumber.reward.imagePath}
+			rewardText = {doorNumber.reward.text}
+			rewardLink = {doorNumber.reward.link}
+			doorNumber = {doorNumber.day} 
+			canOpen={doorNumber.canOpen}/>
 		</div>
 		{/each}
 	</div>

@@ -2,6 +2,8 @@
   export let doorNumber = 12;
   export let canOpen = true;
   export let imagePath = "";
+  export let rewardText = "";
+  export let rewardLink = "";
   let doorOpen = false;
 
   function toggleDoor() {
@@ -11,17 +13,34 @@
       doorOpen=false;
     }
   }
-
 </script>
 
 <main>
     <div class="backDoor" style="--imagePath: url({imagePath})">
-        <div class="backgroundPicture"></div>
-        <div class="door"     class:doorOpen={doorOpen} 
-        on:click={toggleDoor} 
-        >
-    <span class="doorNumber">{doorNumber}</span>
+      {#if rewardLink}
+        <a href={rewardLink}>
+          <div class="backgroundPicture">
+            <div class="backgroundText">
+              <span class="bgSpan">
+                {rewardText}
+              </span>
+            </div>
+          </div>
+        </a>
+      {:else}
+        <div class="backgroundPicture">
+          <div class="backgroundText">
+            <span class="bgSpan">
+              {rewardText}
+            </span>
+          </div>
         </div>
+      {/if}
+      <div class="door" 
+           class:doorOpen={doorOpen} 
+           on:click={toggleDoor} >
+        <span class="doorNumber">{doorNumber}</span>
+      </div>
     </div>
 </main>
 
@@ -37,12 +56,12 @@
 
 .backDoor {
   background-color: #333;
-
   position:relative;
   width: var(--door-width);
   height: var(--door-height);
   margin: var(--margin);
   margin-left:var(--margin-left);
+  transition: transform .2s; /* Animation */
 }
 
 .backgroundPicture {
@@ -52,6 +71,23 @@
   width: var(--door-width);
   height: var(--door-height);
   background-position: center;
+}
+
+.backgroundText{
+  width: var(--door-width);
+  height: var(--door-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bgSpan{
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis; 
 }
 
 .door {
