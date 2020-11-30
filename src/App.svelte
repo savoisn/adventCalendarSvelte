@@ -51,7 +51,7 @@ import { onMount } from 'svelte';
 		});
 	})
 
-    function canOpen(dayToCheck){
+	function canOpen(dayToCheck){
 		return (dayToCheck - nbDays <=0)
 	}
     
@@ -59,8 +59,8 @@ import { onMount } from 'svelte';
 </script>
 
 <main>
-	<h1>{name} By NSA!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>{name} By Talan!</h1>
+	<p>Made with love by TalanLabs</p>
 </main>
 
 	<div class = "box">
