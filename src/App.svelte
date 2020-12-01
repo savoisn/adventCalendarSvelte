@@ -69,7 +69,7 @@
 	<p>❤️Made with love by Talan Labs❤️</p>
 
 	<p>Envie d'apprendre un savoir inutile et de gagner des cadeaux ? </p>
-	<p>Clique sur la case du jour et répond à la question posée.</p>
+	<p>Clique sur la case du jour et réponds à la question posée.</p>
 	
 	<p>A vous de jouer !</p>
 
@@ -86,7 +86,7 @@
 	</div>
 
 	<div>
-	<p>A gagner : livres, cd, ballons de rugby, polos Stade Français, et pleins d’autres surprises !  Avec en bonus un chèque cadeaux pour celui qui répondra correctement à un maximum de questions.</p>
+	<p>A gagner : livres, cd, ballons de rugby, polos Stade Français, et plein d’autres surprises !  Avec en bonus un chèque cadeau pour celui qui répondra correctement à un maximum de questions.</p>
 	
 	<p>La réponse et les gagnants seront annoncés le lendemain sur Workplace.</p>
 	</div>
