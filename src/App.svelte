@@ -57,19 +57,21 @@
 	function canOpen(dayToCheck){
 		return (dayToCheck - nbDays <=0)
 	}
+
+	function resetProgression(){
+		doorStore.reset()
+	}
     
 
 </script>
 
-<div>
-	ici {$doorStore}
-</div>
-
-
 <main>
 	<h1>{name} By Talan!</h1>
 	<p>Made with love by TalanLabs</p>
-	<p> jour un case peut etre ouverte a partir du {startUpDateStr}</p>
+	<p>jour un case peut etre ouverte a partir du {startUpDateStr}</p>
+	<p>en debug encore</p>
+
+	<div><button on:click={resetProgression}>reset progression</button></div>
 
 	<div class = "box">
 		{#each calendarDays as doorNumber}

@@ -823,23 +823,23 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[10] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (75:2) {#each calendarDays as doorNumber}
+    // (77:2) {#each calendarDays as doorNumber}
     function create_each_block(ctx) {
     	let door;
     	let current;
 
     	door = new Door({
     			props: {
-    				imagePath: /*doorNumber*/ ctx[10].reward.imagePath,
-    				rewardText: /*doorNumber*/ ctx[10].reward.rewardText,
-    				rewardLink: /*doorNumber*/ ctx[10].reward.rewardLink,
-    				doorNumber: /*doorNumber*/ ctx[10].day,
-    				doorOpen: /*doorNumber*/ ctx[10].day <= /*$doorStore*/ ctx[2],
-    				canOpen: /*doorNumber*/ ctx[10].canOpen
+    				imagePath: /*doorNumber*/ ctx[11].reward.imagePath,
+    				rewardText: /*doorNumber*/ ctx[11].reward.rewardText,
+    				rewardLink: /*doorNumber*/ ctx[11].reward.rewardLink,
+    				doorNumber: /*doorNumber*/ ctx[11].day,
+    				doorOpen: /*doorNumber*/ ctx[11].day <= /*$doorStore*/ ctx[2],
+    				canOpen: /*doorNumber*/ ctx[11].canOpen
     			},
     			$$inline: true
     		});
@@ -854,12 +854,12 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const door_changes = {};
-    			if (dirty & /*calendarDays*/ 2) door_changes.imagePath = /*doorNumber*/ ctx[10].reward.imagePath;
-    			if (dirty & /*calendarDays*/ 2) door_changes.rewardText = /*doorNumber*/ ctx[10].reward.rewardText;
-    			if (dirty & /*calendarDays*/ 2) door_changes.rewardLink = /*doorNumber*/ ctx[10].reward.rewardLink;
-    			if (dirty & /*calendarDays*/ 2) door_changes.doorNumber = /*doorNumber*/ ctx[10].day;
-    			if (dirty & /*calendarDays, $doorStore*/ 6) door_changes.doorOpen = /*doorNumber*/ ctx[10].day <= /*$doorStore*/ ctx[2];
-    			if (dirty & /*calendarDays*/ 2) door_changes.canOpen = /*doorNumber*/ ctx[10].canOpen;
+    			if (dirty & /*calendarDays*/ 2) door_changes.imagePath = /*doorNumber*/ ctx[11].reward.imagePath;
+    			if (dirty & /*calendarDays*/ 2) door_changes.rewardText = /*doorNumber*/ ctx[11].reward.rewardText;
+    			if (dirty & /*calendarDays*/ 2) door_changes.rewardLink = /*doorNumber*/ ctx[11].reward.rewardLink;
+    			if (dirty & /*calendarDays*/ 2) door_changes.doorNumber = /*doorNumber*/ ctx[11].day;
+    			if (dirty & /*calendarDays, $doorStore*/ 6) door_changes.doorOpen = /*doorNumber*/ ctx[11].day <= /*$doorStore*/ ctx[2];
+    			if (dirty & /*calendarDays*/ 2) door_changes.canOpen = /*doorNumber*/ ctx[11].canOpen;
     			door.$set(door_changes);
     		},
     		i: function intro(local) {
@@ -880,7 +880,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(75:2) {#each calendarDays as doorNumber}",
+    		source: "(77:2) {#each calendarDays as doorNumber}",
     		ctx
     	});
 
@@ -888,21 +888,24 @@ var app = (function () {
     }
 
     function create_fragment$1(ctx) {
-    	let div0;
+    	let main;
+    	let h1;
     	let t0;
     	let t1;
     	let t2;
-    	let main;
-    	let h1;
-    	let t3;
-    	let t4;
-    	let t5;
     	let p0;
-    	let t7;
+    	let t4;
     	let p1;
-    	let t10;
+    	let t7;
+    	let p2;
+    	let t9;
+    	let div0;
+    	let button;
+    	let t11;
     	let div1;
     	let current;
+    	let mounted;
+    	let dispose;
     	let each_value = /*calendarDays*/ ctx[1];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -917,54 +920,60 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div0 = element("div");
-    			t0 = text("ici ");
-    			t1 = text(/*$doorStore*/ ctx[2]);
-    			t2 = space();
     			main = element("main");
     			h1 = element("h1");
-    			t3 = text(/*name*/ ctx[0]);
-    			t4 = text(" By Talan!");
-    			t5 = space();
+    			t0 = text(/*name*/ ctx[0]);
+    			t1 = text(" By Talan!");
+    			t2 = space();
     			p0 = element("p");
     			p0.textContent = "Made with love by TalanLabs";
-    			t7 = space();
+    			t4 = space();
     			p1 = element("p");
     			p1.textContent = `jour un case peut etre ouverte a partir du ${/*startUpDateStr*/ ctx[3]}`;
-    			t10 = space();
+    			t7 = space();
+    			p2 = element("p");
+    			p2.textContent = "en debug encore";
+    			t9 = space();
+    			div0 = element("div");
+    			button = element("button");
+    			button.textContent = "reset progression";
+    			t11 = space();
     			div1 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(div0, file$1, 63, 0, 1478);
     			attr_dev(h1, "class", "svelte-1dpsacs");
-    			add_location(h1, file$1, 69, 1, 1519);
-    			add_location(p0, file$1, 70, 1, 1546);
-    			add_location(p1, file$1, 71, 1, 1582);
+    			add_location(h1, file$1, 68, 1, 1540);
+    			add_location(p0, file$1, 69, 1, 1567);
+    			add_location(p1, file$1, 70, 1, 1603);
+    			add_location(p2, file$1, 71, 1, 1671);
+    			add_location(button, file$1, 73, 6, 1701);
+    			add_location(div0, file$1, 73, 1, 1696);
     			attr_dev(div1, "class", "box svelte-1dpsacs");
-    			add_location(div1, file$1, 73, 1, 1652);
+    			add_location(div1, file$1, 75, 1, 1772);
     			attr_dev(main, "class", "svelte-1dpsacs");
-    			add_location(main, file$1, 68, 0, 1511);
+    			add_location(main, file$1, 67, 0, 1532);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div0, anchor);
-    			append_dev(div0, t0);
-    			append_dev(div0, t1);
-    			insert_dev(target, t2, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
-    			append_dev(h1, t3);
-    			append_dev(h1, t4);
-    			append_dev(main, t5);
+    			append_dev(h1, t0);
+    			append_dev(h1, t1);
+    			append_dev(main, t2);
     			append_dev(main, p0);
-    			append_dev(main, t7);
+    			append_dev(main, t4);
     			append_dev(main, p1);
-    			append_dev(main, t10);
+    			append_dev(main, t7);
+    			append_dev(main, p2);
+    			append_dev(main, t9);
+    			append_dev(main, div0);
+    			append_dev(div0, button);
+    			append_dev(main, t11);
     			append_dev(main, div1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -972,10 +981,14 @@ var app = (function () {
     			}
 
     			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*resetProgression*/ ctx[4], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*$doorStore*/ 4) set_data_dev(t1, /*$doorStore*/ ctx[2]);
-    			if (!current || dirty & /*name*/ 1) set_data_dev(t3, /*name*/ ctx[0]);
+    			if (!current || dirty & /*name*/ 1) set_data_dev(t0, /*name*/ ctx[0]);
 
     			if (dirty & /*calendarDays, $doorStore*/ 6) {
     				each_value = /*calendarDays*/ ctx[1];
@@ -1024,10 +1037,10 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div0);
-    			if (detaching) detach_dev(t2);
     			if (detaching) detach_dev(main);
     			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -1098,6 +1111,10 @@ var app = (function () {
     		return dayToCheck - nbDays <= 0;
     	}
 
+    	function resetProgression() {
+    		doorStore.reset();
+    	}
+
     	const writable_props = ["name"];
 
     	Object.keys($$props).forEach(key => {
@@ -1121,6 +1138,7 @@ var app = (function () {
     		defineNbDays,
     		rewards,
     		canOpen,
+    		resetProgression,
     		$doorStore
     	});
 
@@ -1138,7 +1156,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, calendarDays, $doorStore, startUpDateStr];
+    	return [name, calendarDays, $doorStore, startUpDateStr, resetProgression];
     }
 
     class App extends SvelteComponentDev {
