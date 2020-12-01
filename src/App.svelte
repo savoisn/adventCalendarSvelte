@@ -65,7 +65,7 @@
 </script>
 
 <main>
-	<h1>Agile {name} By Talan!</h1>
+	<h1>Iterative {name} By Talan!</h1>
 	<p>❤️Made with love by Talan Labs❤️</p>
 
 	<p>Envie d'apprendre un savoir inutile et de gagner des cadeaux ? </p>
