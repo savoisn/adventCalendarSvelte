@@ -23,14 +23,14 @@
 
 	let rewards = {
 		0:{
-			imagePath:"images/christmas-tree.png",
-			rewardText:"L'orthographe un Art en Péril",
+			imagePath:"images/1.png",
+			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"
 		},
 		1:{
-			imagePath:"images/christmas-tree.png",
-			rewardText:"une petite phrase un peu longue pour etre jolie",
-			rewardLink:"http://yahoo.com/"
+			imagePath:"images/2.jpg",
+			rewardText:"",
+			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQldYUVA2RkdISVVMQTNTVkdBVUNPWkJJUy4u"
 		}
 	}
 
@@ -66,9 +66,12 @@
 
 <main>
 	<h1>Agile {name} By Talan!</h1>
-	<p>Made with love by TalanLabs</p>
-    <p>Chaque jour une case peut etre ouverte</p>
-    <p>Et une demarche iterative pour montrer notre savoir faire</p>
+	<p>❤️Made with love by Talan Labs❤️</p>
+
+	<p>Envie d'apprendre un savoir inutile et de gagner des cadeaux ? </p>
+	<p>Clique sur la case du jour et répond à la question posée.</p>
+	
+	<p>A vous de jouer !</p>
 
 	<div class = "box">
 		{#each calendarDays as doorNumber}
@@ -82,8 +85,12 @@
 		{/each}
 	</div>
 
-	<div><button on:click={resetProgression}>reset progression</button></div>
-	<div></div>
+	<div>
+	<p>A gagner : livres, cd, ballons de rugby, polos Stade Français, et pleins d’autres surprises !  Avec en bonus un chèque cadeaux pour celui qui répondra correctement à un maximum de questions.</p>
+	
+	<p>La réponse et les gagnants seront annoncés le lendemain sur Workplace.</p>
+	</div>
+<div><button on:click={resetProgression}>reset progression</button></div>
 </main>
 
 

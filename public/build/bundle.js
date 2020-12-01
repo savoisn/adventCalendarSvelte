@@ -495,11 +495,11 @@ var app = (function () {
     			div0 = element("div");
     			span = element("span");
     			t = text(/*rewardText*/ ctx[3]);
-    			attr_dev(span, "class", "bgSpan svelte-1263e6i");
+    			attr_dev(span, "class", "bgSpan svelte-1cbo3zo");
     			add_location(span, file, 34, 10, 826);
-    			attr_dev(div0, "class", "backgroundText svelte-1263e6i");
+    			attr_dev(div0, "class", "backgroundText svelte-1cbo3zo");
     			add_location(div0, file, 33, 8, 787);
-    			attr_dev(div1, "class", "backgroundPicture svelte-1263e6i");
+    			attr_dev(div1, "class", "backgroundPicture svelte-1cbo3zo");
     			add_location(div1, file, 32, 6, 747);
     		},
     		m: function mount(target, anchor) {
@@ -542,15 +542,15 @@ var app = (function () {
     			div0 = element("div");
     			span = element("span");
     			t = text(/*rewardText*/ ctx[3]);
-    			attr_dev(span, "class", "bgSpan svelte-1263e6i");
+    			attr_dev(span, "class", "bgSpan svelte-1cbo3zo");
     			add_location(span, file, 25, 12, 617);
-    			attr_dev(div0, "class", "backgroundText svelte-1263e6i");
+    			attr_dev(div0, "class", "backgroundText svelte-1cbo3zo");
     			add_location(div0, file, 24, 10, 576);
-    			attr_dev(div1, "class", "backgroundPicture svelte-1263e6i");
+    			attr_dev(div1, "class", "backgroundPicture svelte-1cbo3zo");
     			add_location(div1, file, 23, 8, 534);
     			attr_dev(a, "href", /*rewardLink*/ ctx[4]);
     			attr_dev(a, "target", "_blank");
-    			attr_dev(a, "class", "svelte-1263e6i");
+    			attr_dev(a, "class", "svelte-1cbo3zo");
     			add_location(a, file, 22, 6, 488);
     		},
     		m: function mount(target, anchor) {
@@ -610,15 +610,15 @@ var app = (function () {
     			div0 = element("div");
     			span = element("span");
     			t1 = text(/*doorNumber*/ ctx[1]);
-    			attr_dev(span, "class", "doorNumber svelte-1263e6i");
+    			attr_dev(span, "class", "doorNumber svelte-1cbo3zo");
     			add_location(span, file, 43, 6, 1029);
-    			attr_dev(div0, "class", "door svelte-1263e6i");
+    			attr_dev(div0, "class", "door svelte-1cbo3zo");
     			toggle_class(div0, "doorOpen", /*doorOpen*/ ctx[0]);
     			add_location(div0, file, 40, 4, 933);
-    			attr_dev(div1, "class", "backDoor svelte-1263e6i");
+    			attr_dev(div1, "class", "backDoor svelte-1cbo3zo");
     			set_style(div1, "--imagePath", "url(" + /*imagePath*/ ctx[2] + ")");
     			add_location(div1, file, 20, 2, 393);
-    			attr_dev(main, "class", "svelte-1263e6i");
+    			attr_dev(main, "class", "svelte-1cbo3zo");
     			add_location(main, file, 19, 0, 384);
     		},
     		l: function claim(nodes) {
@@ -822,7 +822,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (74:2) {#each calendarDays as doorNumber}
+    // (77:2) {#each calendarDays as doorNumber}
     function create_each_block(ctx) {
     	let door;
     	let current;
@@ -875,7 +875,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(74:2) {#each calendarDays as doorNumber}",
+    		source: "(77:2) {#each calendarDays as doorNumber}",
     		ctx
     	});
 
@@ -895,12 +895,17 @@ var app = (function () {
     	let t7;
     	let p2;
     	let t9;
+    	let p3;
+    	let t11;
     	let div0;
-    	let t10;
-    	let div1;
-    	let button;
     	let t12;
+    	let div1;
+    	let p4;
+    	let t14;
+    	let p5;
+    	let t16;
     	let div2;
+    	let button;
     	let current;
     	let mounted;
     	let dispose;
@@ -925,38 +930,49 @@ var app = (function () {
     			t2 = text(" By Talan!");
     			t3 = space();
     			p0 = element("p");
-    			p0.textContent = "Made with love by TalanLabs";
+    			p0.textContent = "❤️Made with love by Talan Labs❤️";
     			t5 = space();
     			p1 = element("p");
-    			p1.textContent = "Chaque jour une case peut etre ouverte";
+    			p1.textContent = "Envie d'apprendre un savoir inutile et de gagner des cadeaux ?";
     			t7 = space();
     			p2 = element("p");
-    			p2.textContent = "Et une demarche iterative pour montrer notre savoir faire";
+    			p2.textContent = "Clique sur la case du jour et répond à la question posée.";
     			t9 = space();
+    			p3 = element("p");
+    			p3.textContent = "A vous de jouer !";
+    			t11 = space();
     			div0 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t10 = space();
+    			t12 = space();
     			div1 = element("div");
+    			p4 = element("p");
+    			p4.textContent = "A gagner : livres, cd, ballons de rugby, polos Stade Français, et pleins d’autres surprises !  Avec en bonus un chèque cadeaux pour celui qui répondra correctement à un maximum de questions.";
+    			t14 = space();
+    			p5 = element("p");
+    			p5.textContent = "La réponse et les gagnants seront annoncés le lendemain sur Workplace.";
+    			t16 = space();
+    			div2 = element("div");
     			button = element("button");
     			button.textContent = "reset progression";
-    			t12 = space();
-    			div2 = element("div");
     			attr_dev(h1, "class", "svelte-1dpsacs");
-    			add_location(h1, file$1, 67, 1, 1547);
-    			add_location(p0, file$1, 68, 1, 1580);
-    			add_location(p1, file$1, 69, 4, 1619);
-    			add_location(p2, file$1, 70, 4, 1669);
+    			add_location(h1, file$1, 67, 1, 1560);
+    			add_location(p0, file$1, 68, 1, 1593);
+    			add_location(p1, file$1, 70, 1, 1635);
+    			add_location(p2, file$1, 71, 1, 1707);
+    			add_location(p3, file$1, 73, 1, 1775);
     			attr_dev(div0, "class", "box svelte-1dpsacs");
-    			add_location(div0, file$1, 72, 1, 1736);
-    			add_location(button, file$1, 84, 6, 2081);
-    			add_location(div1, file$1, 84, 1, 2076);
-    			add_location(div2, file$1, 85, 1, 2151);
+    			add_location(div0, file$1, 75, 1, 1802);
+    			add_location(p4, file$1, 88, 1, 2149);
+    			add_location(p5, file$1, 90, 1, 2350);
+    			add_location(div1, file$1, 87, 1, 2142);
+    			add_location(button, file$1, 92, 5, 2441);
+    			add_location(div2, file$1, 92, 0, 2436);
     			attr_dev(main, "class", "svelte-1dpsacs");
-    			add_location(main, file$1, 66, 0, 1539);
+    			add_location(main, file$1, 66, 0, 1552);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -974,17 +990,22 @@ var app = (function () {
     			append_dev(main, t7);
     			append_dev(main, p2);
     			append_dev(main, t9);
+    			append_dev(main, p3);
+    			append_dev(main, t11);
     			append_dev(main, div0);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div0, null);
     			}
 
-    			append_dev(main, t10);
-    			append_dev(main, div1);
-    			append_dev(div1, button);
     			append_dev(main, t12);
+    			append_dev(main, div1);
+    			append_dev(div1, p4);
+    			append_dev(div1, t14);
+    			append_dev(div1, p5);
+    			append_dev(main, t16);
     			append_dev(main, div2);
+    			append_dev(div2, button);
     			current = true;
 
     			if (!mounted) {
@@ -1080,14 +1101,14 @@ var app = (function () {
 
     	let rewards = {
     		0: {
-    			imagePath: "images/christmas-tree.png",
-    			rewardText: "L'orthographe un Art en Péril",
+    			imagePath: "images/1.png",
+    			rewardText: "",
     			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"
     		},
     		1: {
-    			imagePath: "images/christmas-tree.png",
-    			rewardText: "une petite phrase un peu longue pour etre jolie",
-    			rewardLink: "http://yahoo.com/"
+    			imagePath: "images/2.jpg",
+    			rewardText: "",
+    			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQldYUVA2RkdISVVMQTNTVkdBVUNPWkJJUy4u"
     		}
     	};
 

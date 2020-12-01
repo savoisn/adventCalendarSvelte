@@ -80,12 +80,14 @@
   height: var(--door-height);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   overflow: hidden;
 }
 
 .bgSpan{
-  color: white;
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
   text-align: center;
   overflow: hidden;
   display: inline-block;
