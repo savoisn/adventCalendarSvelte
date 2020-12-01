@@ -896,12 +896,12 @@ var app = (function () {
     	let p0;
     	let t4;
     	let p1;
-    	let t7;
+    	let t6;
     	let p2;
-    	let t9;
+    	let t10;
     	let div0;
     	let button;
-    	let t11;
+    	let t12;
     	let div1;
     	let current;
     	let mounted;
@@ -929,15 +929,15 @@ var app = (function () {
     			p0.textContent = "Made with love by TalanLabs";
     			t4 = space();
     			p1 = element("p");
-    			p1.textContent = `jour un case peut etre ouverte a partir du ${/*startUpDateStr*/ ctx[3]}`;
-    			t7 = space();
+    			p1.textContent = "Chaque jour une case peut etre ouverte";
+    			t6 = space();
     			p2 = element("p");
-    			p2.textContent = "en debug encore";
-    			t9 = space();
+    			p2.textContent = `A partir du ${/*startUpDateStr*/ ctx[3]} en debug encore`;
+    			t10 = space();
     			div0 = element("div");
     			button = element("button");
     			button.textContent = "reset progression";
-    			t11 = space();
+    			t12 = space();
     			div1 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -948,11 +948,11 @@ var app = (function () {
     			add_location(h1, file$1, 68, 1, 1540);
     			add_location(p0, file$1, 69, 1, 1567);
     			add_location(p1, file$1, 70, 1, 1603);
-    			add_location(p2, file$1, 71, 1, 1671);
-    			add_location(button, file$1, 73, 6, 1701);
-    			add_location(div0, file$1, 73, 1, 1696);
+    			add_location(p2, file$1, 71, 1, 1650);
+    			add_location(button, file$1, 73, 6, 1709);
+    			add_location(div0, file$1, 73, 1, 1704);
     			attr_dev(div1, "class", "box svelte-1dpsacs");
-    			add_location(div1, file$1, 75, 1, 1772);
+    			add_location(div1, file$1, 75, 1, 1780);
     			attr_dev(main, "class", "svelte-1dpsacs");
     			add_location(main, file$1, 67, 0, 1532);
     		},
@@ -968,12 +968,12 @@ var app = (function () {
     			append_dev(main, p0);
     			append_dev(main, t4);
     			append_dev(main, p1);
-    			append_dev(main, t7);
+    			append_dev(main, t6);
     			append_dev(main, p2);
-    			append_dev(main, t9);
+    			append_dev(main, t10);
     			append_dev(main, div0);
     			append_dev(div0, button);
-    			append_dev(main, t11);
+    			append_dev(main, t12);
     			append_dev(main, div1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {

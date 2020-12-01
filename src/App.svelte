@@ -68,8 +68,8 @@
 <main>
 	<h1>{name} By Talan!</h1>
 	<p>Made with love by TalanLabs</p>
-	<p>jour un case peut etre ouverte a partir du {startUpDateStr}</p>
-	<p>en debug encore</p>
+	<p>Chaque jour une case peut etre ouverte</p>
+	<p>A partir du {startUpDateStr} en debug encore</p>
 
 	<div><button on:click={resetProgression}>reset progression</button></div>
 
@@ -81,7 +81,7 @@
 			rewardLink = {doorNumber.reward.rewardLink}
 			doorNumber = {doorNumber.day} 
 			doorOpen = {doorNumber.day <= $doorStore}
-			canOpen={doorNumber.canOpen}/>
+			canOpen = {doorNumber.canOpen}/>
 		{/each}
 	</div>
 
