@@ -9,7 +9,7 @@
 	import doorStore from './store.js';
 
 	let calendarDays = [];
-	let startUpDateStr ="2020-11-26T00:00+01:00"
+	let startUpDateStr ="2020-11-30T00:00+01:00"
 	let startUpDate = Date.parse(startUpDateStr);
 
 	let currentDate = Date.now();
@@ -24,8 +24,8 @@
 	let rewards = {
 		0:{
 			imagePath:"images/christmas-tree.png",
-			rewardText:"une petite phrase un peu longue pour etre jolie et encore plus longue pour voir si ca depasse en dessous dans le dessous du dessous",
-			rewardLink:"http://google.com/"
+			rewardText:"L'orthographe un Art en Péril",
+			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"
 		},
 		1:{
 			imagePath:"images/christmas-tree.png",
@@ -61,17 +61,14 @@
 	function resetProgression(){
 		doorStore.reset()
 	}
-    
 
 </script>
 
 <main>
-	<h1>{name} By Talan!</h1>
+	<h1>Agile {name} By Talan!</h1>
 	<p>Made with love by TalanLabs</p>
-	<p>Chaque jour une case peut etre ouverte</p>
-	<p>A partir du {startUpDateStr} en debug encore</p>
-
-	<div><button on:click={resetProgression}>reset progression</button></div>
+    <p>Chaque jour une case peut etre ouverte</p>
+    <p>Et une demarche iterative pour montrer notre savoir faire</p>
 
 	<div class = "box">
 		{#each calendarDays as doorNumber}
@@ -85,6 +82,8 @@
 		{/each}
 	</div>
 
+	<div><button on:click={resetProgression}>reset progression</button></div>
+	<div></div>
 </main>
 
 

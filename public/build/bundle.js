@@ -454,16 +454,11 @@ var app = (function () {
         return { set, update, subscribe };
     }
 
-    const DOORS = [
-    ];
-
     const storedDoor = localStorage.getItem("door");
     const { subscribe: subscribe$1, set, update: update$1 } = writable(storedDoor);
     subscribe$1(value => {
         localStorage.setItem("door", value);
     });
-
-
 
     const addDoor = door => update$1(storeddoor => {
         console.log(storeddoor, door);
@@ -475,7 +470,7 @@ var app = (function () {
     });
 
     const reset = () => {
-        set(DOORS);
+        set(0);
     };
 
     var doorStore = {
@@ -827,7 +822,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (77:2) {#each calendarDays as doorNumber}
+    // (74:2) {#each calendarDays as doorNumber}
     function create_each_block(ctx) {
     	let door;
     	let current;
@@ -880,7 +875,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(77:2) {#each calendarDays as doorNumber}",
+    		source: "(74:2) {#each calendarDays as doorNumber}",
     		ctx
     	});
 
@@ -893,16 +888,19 @@ var app = (function () {
     	let t0;
     	let t1;
     	let t2;
+    	let t3;
     	let p0;
-    	let t4;
+    	let t5;
     	let p1;
-    	let t6;
+    	let t7;
     	let p2;
-    	let t10;
+    	let t9;
     	let div0;
+    	let t10;
+    	let div1;
     	let button;
     	let t12;
-    	let div1;
+    	let div2;
     	let current;
     	let mounted;
     	let dispose;
@@ -922,39 +920,43 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			t0 = text(/*name*/ ctx[0]);
-    			t1 = text(" By Talan!");
-    			t2 = space();
+    			t0 = text("Agile ");
+    			t1 = text(/*name*/ ctx[0]);
+    			t2 = text(" By Talan!");
+    			t3 = space();
     			p0 = element("p");
     			p0.textContent = "Made with love by TalanLabs";
-    			t4 = space();
+    			t5 = space();
     			p1 = element("p");
     			p1.textContent = "Chaque jour une case peut etre ouverte";
-    			t6 = space();
+    			t7 = space();
     			p2 = element("p");
-    			p2.textContent = `A partir du ${/*startUpDateStr*/ ctx[3]} en debug encore`;
-    			t10 = space();
+    			p2.textContent = "Et une demarche iterative pour montrer notre savoir faire";
+    			t9 = space();
     			div0 = element("div");
-    			button = element("button");
-    			button.textContent = "reset progression";
-    			t12 = space();
-    			div1 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
+    			t10 = space();
+    			div1 = element("div");
+    			button = element("button");
+    			button.textContent = "reset progression";
+    			t12 = space();
+    			div2 = element("div");
     			attr_dev(h1, "class", "svelte-1dpsacs");
-    			add_location(h1, file$1, 68, 1, 1540);
-    			add_location(p0, file$1, 69, 1, 1567);
-    			add_location(p1, file$1, 70, 1, 1603);
-    			add_location(p2, file$1, 71, 1, 1650);
-    			add_location(button, file$1, 73, 6, 1709);
-    			add_location(div0, file$1, 73, 1, 1704);
-    			attr_dev(div1, "class", "box svelte-1dpsacs");
-    			add_location(div1, file$1, 75, 1, 1780);
+    			add_location(h1, file$1, 67, 1, 1547);
+    			add_location(p0, file$1, 68, 1, 1580);
+    			add_location(p1, file$1, 69, 4, 1619);
+    			add_location(p2, file$1, 70, 4, 1669);
+    			attr_dev(div0, "class", "box svelte-1dpsacs");
+    			add_location(div0, file$1, 72, 1, 1736);
+    			add_location(button, file$1, 84, 6, 2081);
+    			add_location(div1, file$1, 84, 1, 2076);
+    			add_location(div2, file$1, 85, 1, 2151);
     			attr_dev(main, "class", "svelte-1dpsacs");
-    			add_location(main, file$1, 67, 0, 1532);
+    			add_location(main, file$1, 66, 0, 1539);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -964,31 +966,34 @@ var app = (function () {
     			append_dev(main, h1);
     			append_dev(h1, t0);
     			append_dev(h1, t1);
-    			append_dev(main, t2);
+    			append_dev(h1, t2);
+    			append_dev(main, t3);
     			append_dev(main, p0);
-    			append_dev(main, t4);
+    			append_dev(main, t5);
     			append_dev(main, p1);
-    			append_dev(main, t6);
+    			append_dev(main, t7);
     			append_dev(main, p2);
-    			append_dev(main, t10);
+    			append_dev(main, t9);
     			append_dev(main, div0);
-    			append_dev(div0, button);
-    			append_dev(main, t12);
-    			append_dev(main, div1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div1, null);
+    				each_blocks[i].m(div0, null);
     			}
 
+    			append_dev(main, t10);
+    			append_dev(main, div1);
+    			append_dev(div1, button);
+    			append_dev(main, t12);
+    			append_dev(main, div2);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*resetProgression*/ ctx[4], false, false, false);
+    				dispose = listen_dev(button, "click", /*resetProgression*/ ctx[3], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*name*/ 1) set_data_dev(t0, /*name*/ ctx[0]);
+    			if (!current || dirty & /*name*/ 1) set_data_dev(t1, /*name*/ ctx[0]);
 
     			if (dirty & /*calendarDays, $doorStore*/ 6) {
     				each_value = /*calendarDays*/ ctx[1];
@@ -1005,7 +1010,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div1, null);
+    						each_blocks[i].m(div0, null);
     					}
     				}
 
@@ -1063,7 +1068,7 @@ var app = (function () {
     	validate_slots("App", slots, []);
     	let { name = "" } = $$props;
     	let calendarDays = [];
-    	let startUpDateStr = "2020-11-26T00:00+01:00";
+    	let startUpDateStr = "2020-11-30T00:00+01:00";
     	let startUpDate = Date.parse(startUpDateStr);
     	let currentDate = Date.now();
     	let nbDays = 1;
@@ -1076,8 +1081,8 @@ var app = (function () {
     	let rewards = {
     		0: {
     			imagePath: "images/christmas-tree.png",
-    			rewardText: "une petite phrase un peu longue pour etre jolie et encore plus longue pour voir si ca depasse en dessous dans le dessous du dessous",
-    			rewardLink: "http://google.com/"
+    			rewardText: "L'orthographe un Art en Péril",
+    			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"
     		},
     		1: {
     			imagePath: "images/christmas-tree.png",
@@ -1145,7 +1150,7 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     		if ("calendarDays" in $$props) $$invalidate(1, calendarDays = $$props.calendarDays);
-    		if ("startUpDateStr" in $$props) $$invalidate(3, startUpDateStr = $$props.startUpDateStr);
+    		if ("startUpDateStr" in $$props) startUpDateStr = $$props.startUpDateStr;
     		if ("startUpDate" in $$props) startUpDate = $$props.startUpDate;
     		if ("currentDate" in $$props) currentDate = $$props.currentDate;
     		if ("nbDays" in $$props) nbDays = $$props.nbDays;
@@ -1156,7 +1161,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, calendarDays, $doorStore, startUpDateStr, resetProgression];
+    	return [name, calendarDays, $doorStore, resetProgression];
     }
 
     class App extends SvelteComponentDev {
