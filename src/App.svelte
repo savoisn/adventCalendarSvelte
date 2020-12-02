@@ -8,6 +8,7 @@
 
 	import doorStore from './store.js';
 
+	console.log(__myapp.env);
 	let calendarDays = [];
 	//let startUpDateStr ="2020-11-25T00:00+01:00"
 	let startUpDateStr ="2020-11-30T00:00+01:00"
@@ -46,12 +47,12 @@
 	}
 
 	onMount(async () => {
-	await fetch(`http://worldclockapi.com/api/json/cet/now`)
+	// await fetch(__myapp.env.API_URL+"/daySinceFirstDec")
+	await fetch("https://advent-calendar-api-talan.cleverapps.io/daySinceFirstDec")
 		.then(r => r.json())
 		.then(data => {
-			if(data.currentDateTime){
-				currentDate = Date.parse(data.currentDateTime);
-				defineNbDays()
+			if(data.daySinceFirstDec){
+				nbDays = parseInt(data.daySinceFirstDec);
 				for(let i in [...Array(25).keys()] ){
 					const day = parseInt(i) + 1
 					calendarDays.push({
