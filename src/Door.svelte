@@ -64,6 +64,7 @@
   margin: var(--margin);
   margin-left:var(--margin-left);
   transition: transform .2s; /* Animation */
+  text-decoration: none;
 }
 
 .backgroundPicture {

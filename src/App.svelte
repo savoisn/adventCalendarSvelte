@@ -9,6 +9,7 @@
 	import doorStore from './store.js';
 
 	let calendarDays = [];
+	//let startUpDateStr ="2020-11-25T00:00+01:00"
 	let startUpDateStr ="2020-11-30T00:00+01:00"
 	let startUpDate = Date.parse(startUpDateStr);
 
@@ -31,6 +32,16 @@
 			imagePath:"images/2.jpg",
 			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQldYUVA2RkdISVVMQTNTVkdBVUNPWkJJUy4u"
+		},
+		2:{
+			imagePath:"images/3.jpg",
+			rewardText:"",
+			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMkZERjAyVDZRNTZKVDdHSUFVOTJSOFYzRi4u"
+		},
+		3:{
+			imagePath:"images/4.png",
+			rewardText:"",
+			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"
 		}
 	}
 
