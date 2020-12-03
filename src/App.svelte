@@ -25,22 +25,22 @@
 
 	let rewards = {
 		0:{
-			imagePath:"images/1.png",
+			imagePath:"/build/images/1.png",
 			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"
 		},
 		1:{
-			imagePath:"images/2.jpg",
+			imagePath:"/build/images/2.jpg",
 			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQldYUVA2RkdISVVMQTNTVkdBVUNPWkJJUy4u"
 		},
 		2:{
-			imagePath:"images/3.jpg",
+			imagePath:"/build/images/3.jpg",
 			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMkZERjAyVDZRNTZKVDdHSUFVOTJSOFYzRi4u"
 		},
 		3:{
-			imagePath:"images/4.png",
+			imagePath:"/build/images/4.png",
 			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"
 		}

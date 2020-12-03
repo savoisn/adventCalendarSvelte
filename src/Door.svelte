@@ -14,11 +14,12 @@
       doorOpen=false;
     }
   } 
-	import doorStore from './store.js'
+  import doorStore from './store.js'
+  console.log(imagePath);
 </script>
 
 <main>
-  <div class="backDoor" style="--imagePath: url({imagePath})">
+  <div class="backDoor" style='--imagePath: url("{imagePath}")'>
     {#if rewardLink !== ""}
       <a href={rewardLink} target="_blank">
         <div class="backgroundPicture">
