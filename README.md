@@ -103,3 +103,14 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+# TODO
+- add authentification with keycloak
+- enable routing
+- cleanup components architecture
+    - calendar should be a component
+    - door content should a component
+    - etc...
+- zoom door on click and opens it in nearly full window
+- replace dirty forms with insite forms.
+- allow branding of the calendar based on json
+- 
