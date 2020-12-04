@@ -8,7 +8,9 @@
 
 	import doorStore from './store.js';
 
+	console.log(__myapp.env);
 	let calendarDays = [];
+	//let startUpDateStr ="2020-11-25T00:00+01:00"
 	let startUpDateStr ="2020-11-30T00:00+01:00"
 	let startUpDate = Date.parse(startUpDateStr);
 
@@ -16,6 +18,12 @@
 
 	let nbDays = 1;
 
+	let door_numbers = [...Array(25).keys()]
+	let random_door_numbers = door_numbers
+	.map((a) => ({sort: Math.random(), value: a}))
+	.sort((a, b) => a.sort - b.sort)
+	.map((a) => a.value)
+	
 	function defineNbDays(){
 		let diff = currentDate - startUpDate
 		nbDays = Math.floor(diff / (1000 * 3600 * 24));
@@ -23,31 +31,44 @@
 
 	let rewards = {
 		0:{
-			imagePath:"images/1.png",
+			imagePath:"/build/images/1.png",
 			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"
 		},
 		1:{
-			imagePath:"images/2.jpg",
+			imagePath:"/build/images/2.jpg",
 			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQldYUVA2RkdISVVMQTNTVkdBVUNPWkJJUy4u"
+		},
+		2:{
+			imagePath:"/build/images/3.jpg",
+			rewardText:"",
+			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMkZERjAyVDZRNTZKVDdHSUFVOTJSOFYzRi4u"
+		},
+		3:{
+			imagePath:"/build/images/4.png",
+			rewardText:"",
+			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"
 		}
 	}
 
 	onMount(async () => {
-	await fetch(`http://worldclockapi.com/api/json/cet/now`)
+	// await fetch(__myapp.env.API_URL+"/daySinceFirstDec")
+	await fetch("https://advent-calendar-api-talan.cleverapps.io/daySinceFirstDec")
 		.then(r => r.json())
 		.then(data => {
-			if(data.currentDateTime){
-				currentDate = Date.parse(data.currentDateTime);
-				defineNbDays()
-				for(let i in [...Array(25).keys()] ){
+			if(data.daySinceFirstDec){
+				nbDays = parseInt(data.daySinceFirstDec);
+				let id = 1 //j'ai honte je suis desole devant le reste du monde mais j'ai pas le temps... :D
+				for(let i of random_door_numbers){
 					const day = parseInt(i) + 1
 					calendarDays.push({
 						day:day, 
 						canOpen:canOpen(day),
-						reward:rewards[day-1]?rewards[day-1]:""
+						reward:rewards[day-1]?rewards[day-1]:"",
+						id:id
 					})
+					id++;
 				}
 				calendarDays = calendarDays
 			}
@@ -64,13 +85,17 @@
 
 </script>
 
+<div id="particles-js"></div> 
 <main>
-	<h1>Agile {name} By Talan!</h1>
-	<p>❤️Made with love by Talan Labs❤️</p>
+
+	<!-- stats - count particles --> 
+
+	<h1>🎄 Iterative {name} By Talan! 🎄</h1>
+	<p>❤️ Made with love by Talan Labs ❤️</p>
 
 	<p>Envie d'apprendre un savoir inutile et de gagner des cadeaux ? </p>
 	<p>Clique sur la case du jour et réponds à la question posée.</p>
-	
+
 	<p>A vous de jouer !</p>
 
 	<div class = "box">
@@ -81,7 +106,8 @@
 			rewardLink = {doorNumber.reward.rewardLink}
 			doorNumber = {doorNumber.day} 
 			doorOpen = {doorNumber.day <= $doorStore}
-			canOpen = {doorNumber.canOpen}/>
+			canOpen = {doorNumber.canOpen}
+			doorId = {doorNumber.id}/>
 		{/each}
 	</div>
 
@@ -99,7 +125,8 @@
 		display:flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: flex-start;
+		justify-content: space-around;
+		background-color: transparent;
 	}
 
 	main {
@@ -107,12 +134,22 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+
+		display:flex;
+		justify-content: center;
+		flex-direction: column;
 	}
 
 	h1 {
-		color: #0000ff;
-		font-size: 3em;
+		color: #e71616;
+		font-family: 'Nerko One', cursive;
+		font-size: 4em;
 		font-weight: 100;
+		margin-bottom: 10px;
+	}
+
+	p {
+		color: white;
 	}
 
 	@media (min-width: 640px) {

@@ -9,7 +9,6 @@ subscribe(value => {
 });
 
 const addDoor = door => update(storeddoor => {
-    console.log(storeddoor, door)
     if (storeddoor < door){
         return door
     }else{
