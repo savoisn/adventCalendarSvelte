@@ -17,7 +17,6 @@
     }
   } 
   import doorStore from './store.js'
-  console.log(imagePath);
   let emojis = [
     "🎅",
     "🤶",

@@ -8,6 +8,7 @@
 	import Calendar from './routes/calendar.svelte';
 	import ChangeLog from './routes/changelog.svelte';
 import { component_subscribe } from 'svelte/internal';
+import Changelog from './routes/changelog.svelte';
 
 	export let name='';
 
@@ -23,7 +24,7 @@ import { component_subscribe } from 'svelte/internal';
 	</nav>
 	<div>
 		<Route path="/"><Calendar name={name}></Calendar></Route>
-		<Route path="/Changelog" component="ChangeLog" />
+		<Route path="/Changelog" ><Changelog/></Route>
 	</div>
 </Router>
 
