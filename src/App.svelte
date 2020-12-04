@@ -49,6 +49,21 @@
 			imagePath:"/build/images/4.png",
 			rewardText:"",
 			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"
+		},
+		4:{
+			imagePath:"/build/images/5.png",
+			rewardText:"",
+			rewardLink:""
+		},
+		5:{
+			imagePath:"/build/images/6.png",
+			rewardText:"",
+			rewardLink:""
+		},
+		6:{
+			imagePath:"/build/images/christmas-tree.png",
+			rewardText:"",
+			rewardLink:""
 		}
 	}
 

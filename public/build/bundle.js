@@ -491,20 +491,31 @@ var app = (function () {
 
     // (47:4) {:else}
     function create_else_block(ctx) {
-    	let div;
+    	let img;
+    	let img_src_value;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			attr_dev(div, "class", "backgroundPicture svelte-16e21di");
-    			add_location(div, file, 47, 6, 995);
+    			img = element("img");
+    			if (img.src !== (img_src_value = /*imagePath*/ ctx[3])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", /*imageAlt*/ ctx[5]);
+    			attr_dev(img, "class", "bgImg svelte-16e21di");
+    			add_location(img, file, 47, 6, 995);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
+    			insert_dev(target, img, anchor);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*imagePath*/ 8 && img.src !== (img_src_value = /*imagePath*/ ctx[3])) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
+    			if (dirty & /*imageAlt*/ 32) {
+    				attr_dev(img, "alt", /*imageAlt*/ ctx[5]);
+    			}
+    		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(img);
     		}
     	};
 
@@ -604,14 +615,14 @@ var app = (function () {
     			br = element("br");
     			t2 = text(/*doorNumber*/ ctx[1]);
     			attr_dev(br, "class", "svelte-16e21di");
-    			add_location(br, file, 55, 49, 1273);
+    			add_location(br, file, 54, 49, 1284);
     			attr_dev(span, "class", "doorNumber svelte-16e21di");
-    			add_location(span, file, 55, 6, 1230);
+    			add_location(span, file, 54, 6, 1241);
     			attr_dev(div0, "class", "door svelte-16e21di");
     			toggle_class(div0, "doorOpen", /*doorOpen*/ ctx[0]);
     			toggle_class(div0, "door-odd", /*doorId*/ ctx[2] % 2 == 0);
     			toggle_class(div0, "door-even", /*doorId*/ ctx[2] % 2 != 0);
-    			add_location(div0, file, 50, 4, 1054);
+    			add_location(div0, file, 49, 4, 1065);
     			attr_dev(div1, "class", "backDoor svelte-16e21di");
     			set_style(div1, "--imagePath", "url(\"" + /*imagePath*/ ctx[3] + "\")");
     			add_location(div1, file, 41, 2, 767);
@@ -897,7 +908,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (102:2) {#each calendarDays as doorNumber}
+    // (117:2) {#each calendarDays as doorNumber}
     function create_each_block(ctx) {
     	let door;
     	let current;
@@ -952,7 +963,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(102:2) {#each calendarDays as doorNumber}",
+    		source: "(117:2) {#each calendarDays as doorNumber}",
     		ctx
     	});
 
@@ -1040,28 +1051,28 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "reset progression";
     			attr_dev(div0, "id", "particles-js");
-    			add_location(div0, file$1, 87, 0, 2431);
+    			add_location(div0, file$1, 102, 0, 2694);
     			attr_dev(h1, "class", "svelte-198krkm");
-    			add_location(h1, file$1, 92, 1, 2507);
+    			add_location(h1, file$1, 107, 1, 2770);
     			attr_dev(p0, "class", "svelte-198krkm");
-    			add_location(p0, file$1, 93, 1, 2550);
+    			add_location(p0, file$1, 108, 1, 2813);
     			attr_dev(p1, "class", "svelte-198krkm");
-    			add_location(p1, file$1, 95, 1, 2594);
+    			add_location(p1, file$1, 110, 1, 2857);
     			attr_dev(p2, "class", "svelte-198krkm");
-    			add_location(p2, file$1, 96, 1, 2666);
+    			add_location(p2, file$1, 111, 1, 2929);
     			attr_dev(p3, "class", "svelte-198krkm");
-    			add_location(p3, file$1, 98, 1, 2734);
+    			add_location(p3, file$1, 113, 1, 2997);
     			attr_dev(div1, "class", "box svelte-198krkm");
-    			add_location(div1, file$1, 100, 1, 2761);
+    			add_location(div1, file$1, 115, 1, 3024);
     			attr_dev(p4, "class", "svelte-198krkm");
-    			add_location(p4, file$1, 114, 1, 3136);
+    			add_location(p4, file$1, 129, 1, 3399);
     			attr_dev(p5, "class", "svelte-198krkm");
-    			add_location(p5, file$1, 116, 1, 3335);
-    			add_location(div2, file$1, 113, 1, 3129);
-    			add_location(button, file$1, 118, 5, 3426);
-    			add_location(div3, file$1, 118, 0, 3421);
+    			add_location(p5, file$1, 131, 1, 3598);
+    			add_location(div2, file$1, 128, 1, 3392);
+    			add_location(button, file$1, 133, 5, 3689);
+    			add_location(div3, file$1, 133, 0, 3684);
     			attr_dev(main, "class", "svelte-198krkm");
-    			add_location(main, file$1, 88, 0, 2462);
+    			add_location(main, file$1, 103, 0, 2725);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1218,6 +1229,21 @@ var app = (function () {
     			imagePath: "/build/images/4.png",
     			rewardText: "",
     			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"
+    		},
+    		4: {
+    			imagePath: "/build/images/5.png",
+    			rewardText: "",
+    			rewardLink: ""
+    		},
+    		5: {
+    			imagePath: "/build/images/6.png",
+    			rewardText: "",
+    			rewardLink: ""
+    		},
+    		6: {
+    			imagePath: "/build/images/christmas-tree.png",
+    			rewardText: "",
+    			rewardLink: ""
     		}
     	};
 
@@ -1225,7 +1251,7 @@ var app = (function () {
     		// await fetch({"env":{"isProd":false,"API_URL":"http://localhost:8080"}}.env.API_URL+"/daySinceFirstDec")
     		await fetch("https://advent-calendar-api-talan.cleverapps.io/daySinceFirstDec").then(r => r.json()).then(data => {
     			if (data.daySinceFirstDec) {
-    				nbDays = parseInt(data.daySinceFirstDec);
+    				nbDays = parseInt(data.daySinceFirstDec) + 3;
     				let id = 1; //j'ai honte je suis desole devant le reste du monde mais j'ai pas le temps... :D
 
     				for (let i of random_door_numbers) {

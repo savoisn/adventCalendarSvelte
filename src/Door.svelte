@@ -45,8 +45,7 @@
         <img src="{imagePath}" alt="{imageAlt}" class="bgImg"/>
       </a>
     {:else}
-      <div class="backgroundPicture">
-      </div>
+      <img src="{imagePath}" alt="{imageAlt}" class="bgImg"/>
     {/if}
     <div class="door" 
           class:doorOpen={doorOpen}  
