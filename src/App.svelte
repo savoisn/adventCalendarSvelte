@@ -25,7 +25,6 @@ import { component_subscribe } from 'svelte/internal';
 		<Route path="/"><Calendar name={name}></Calendar></Route>
 		<Route path="/Changelog" component="ChangeLog" />
 	</div>
-
 </Router>
 
 <style>

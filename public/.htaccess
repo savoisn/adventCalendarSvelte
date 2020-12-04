@@ -1,6 +1,2 @@
-RewriteCond %{REQUEST_URI} !^/images [NC]
-RewriteCond %{REQUEST_URI} !^/css [NC]
-RewriteCond %{REQUEST_URI} !^/js [NC]
-RewriteCond %{REQUEST_URI} !^/build [NC]
 RewriteRule ^([^/]+)/?$ index.html [L]
 

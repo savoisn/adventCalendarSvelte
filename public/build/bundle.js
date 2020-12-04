@@ -2294,20 +2294,31 @@ var app = (function () {
 
     // (47:4) {:else}
     function create_else_block$1(ctx) {
-    	let div;
+    	let img;
+    	let img_src_value;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			attr_dev(div, "class", "backgroundPicture svelte-16e21di");
-    			add_location(div, file$1, 47, 6, 995);
+    			img = element("img");
+    			if (img.src !== (img_src_value = /*imagePath*/ ctx[3])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", /*imageAlt*/ ctx[5]);
+    			attr_dev(img, "class", "bgImg svelte-16e21di");
+    			add_location(img, file$1, 47, 6, 995);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
+    			insert_dev(target, img, anchor);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*imagePath*/ 8 && img.src !== (img_src_value = /*imagePath*/ ctx[3])) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
+    			if (dirty & /*imageAlt*/ 32) {
+    				attr_dev(img, "alt", /*imageAlt*/ ctx[5]);
+    			}
+    		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(img);
     		}
     	};
 
@@ -2407,14 +2418,14 @@ var app = (function () {
     			br = element("br");
     			t2 = text(/*doorNumber*/ ctx[1]);
     			attr_dev(br, "class", "svelte-16e21di");
-    			add_location(br, file$1, 55, 49, 1273);
+    			add_location(br, file$1, 54, 49, 1284);
     			attr_dev(span, "class", "doorNumber svelte-16e21di");
-    			add_location(span, file$1, 55, 6, 1230);
+    			add_location(span, file$1, 54, 6, 1241);
     			attr_dev(div0, "class", "door svelte-16e21di");
     			toggle_class(div0, "doorOpen", /*doorOpen*/ ctx[0]);
     			toggle_class(div0, "door-odd", /*doorId*/ ctx[2] % 2 == 0);
     			toggle_class(div0, "door-even", /*doorId*/ ctx[2] % 2 != 0);
-    			add_location(div0, file$1, 50, 4, 1054);
+    			add_location(div0, file$1, 49, 4, 1065);
     			attr_dev(div1, "class", "backDoor svelte-16e21di");
     			set_style(div1, "--imagePath", "url(\"" + /*imagePath*/ ctx[3] + "\")");
     			add_location(div1, file$1, 41, 2, 767);
@@ -2700,7 +2711,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (99:2) {#each calendarDays as doorNumber}
+    // (114:2) {#each calendarDays as doorNumber}
     function create_each_block(ctx) {
     	let door;
     	let current;
@@ -2755,7 +2766,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(99:2) {#each calendarDays as doorNumber}",
+    		source: "(114:2) {#each calendarDays as doorNumber}",
     		ctx
     	});
 
@@ -2839,26 +2850,26 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "reset progression";
     			attr_dev(h1, "class", "svelte-198krkm");
-    			add_location(h1, file$2, 89, 1, 2408);
+    			add_location(h1, file$2, 104, 1, 2667);
     			attr_dev(p0, "class", "svelte-198krkm");
-    			add_location(p0, file$2, 90, 1, 2451);
+    			add_location(p0, file$2, 105, 1, 2710);
     			attr_dev(p1, "class", "svelte-198krkm");
-    			add_location(p1, file$2, 92, 1, 2495);
+    			add_location(p1, file$2, 107, 1, 2754);
     			attr_dev(p2, "class", "svelte-198krkm");
-    			add_location(p2, file$2, 93, 1, 2567);
+    			add_location(p2, file$2, 108, 1, 2826);
     			attr_dev(p3, "class", "svelte-198krkm");
-    			add_location(p3, file$2, 95, 1, 2635);
+    			add_location(p3, file$2, 110, 1, 2894);
     			attr_dev(div0, "class", "box svelte-198krkm");
-    			add_location(div0, file$2, 97, 1, 2662);
+    			add_location(div0, file$2, 112, 1, 2921);
     			attr_dev(p4, "class", "svelte-198krkm");
-    			add_location(p4, file$2, 111, 1, 3037);
+    			add_location(p4, file$2, 126, 1, 3296);
     			attr_dev(p5, "class", "svelte-198krkm");
-    			add_location(p5, file$2, 113, 1, 3236);
-    			add_location(div1, file$2, 110, 1, 3030);
-    			add_location(button, file$2, 115, 5, 3327);
-    			add_location(div2, file$2, 115, 0, 3322);
+    			add_location(p5, file$2, 128, 1, 3495);
+    			add_location(div1, file$2, 125, 1, 3289);
+    			add_location(button, file$2, 130, 5, 3586);
+    			add_location(div2, file$2, 130, 0, 3581);
     			attr_dev(main, "class", "svelte-198krkm");
-    			add_location(main, file$2, 85, 0, 2363);
+    			add_location(main, file$2, 100, 0, 2622);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3011,6 +3022,21 @@ var app = (function () {
     			imagePath: "/build/images/4.png",
     			rewardText: "",
     			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"
+    		},
+    		4: {
+    			imagePath: "/build/images/5.png",
+    			rewardText: "",
+    			rewardLink: ""
+    		},
+    		5: {
+    			imagePath: "/build/images/6.png",
+    			rewardText: "",
+    			rewardLink: ""
+    		},
+    		6: {
+    			imagePath: "/build/images/christmas-tree.png",
+    			rewardText: "",
+    			rewardLink: ""
     		}
     	};
 
