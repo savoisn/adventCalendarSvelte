@@ -1,0 +1,2 @@
+RewriteRule ^([^/]+)/?$ index.html [L]
+

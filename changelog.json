@@ -1,0 +1,43 @@
+{
+  "changes":[
+    {
+      "date":"2020-11-29",
+      "content":[
+        "initial MVP done with svelte"
+      ]
+    },
+    {
+      "date":"2020-11-30",
+      "content":[
+        "photo for only 1 and 2 december"
+      ]
+    },
+    {
+      "date":"2020-12-01",
+      "content":[
+        "content for day 3 and 4"
+      ]
+    },
+    {
+      "date":"2020-12-02",
+      "content":[
+        "correction of image display in safari"
+      ]
+    },
+    {
+      "date":"2020-12-03",
+      "content":[
+        "awesome rework of the display - thanks Cecile Freyd-Foucault !"
+      ]
+    },
+    {
+      "date":"2020-12-04",
+      "content":[
+        "adding content for 5 and 6 december",
+        "adding router in svelte",
+        "introducing this changelog page"
+      ]
+    }
+
+  ]
+}
