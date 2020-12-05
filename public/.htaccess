@@ -1,5 +1,5 @@
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !^/index.html$
 RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|css|js|svg|map|woff2|woff|ttf)$
-RewriteRule .* /index.html [L,R=302]
+RewriteRule .* / [L,R=302]
 
