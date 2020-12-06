@@ -101,7 +101,7 @@
 
 	<!-- stats - count particles --> 
 
-	<h1>🎄 Iterative {name} By Talan! 🎄</h1>
+	<h1>🎄 <a class="title" href="/Changelog">Iterative</a> {name} By Talan! 🎄</h1>
 	<p>❤️ Made with love by Talan Labs ❤️</p>
 
 	<p>Envie d'apprendre un savoir inutile et de gagner des cadeaux ? </p>
@@ -129,9 +129,9 @@
 	</div>
 <div>
 	<br/>
-	<p>Curious to see the iterative process behind the calendar?
-	Look at the <a href="/Changelog">changelog</a> of the app </p>
-<button on:click={resetProgression}>reset progression</button></div>
+	<p>Intéressé par le processus itératif derrière le developpement de ce calendrier?</p>
+	<p>Vous pouvez consulter le <a class="link" href="/Changelog">changelog ici!</a></p>
+<button on:click={resetProgression}>Reset Progression</button></div>
 </main>
 
 
@@ -167,8 +167,19 @@
 		color: white;
 	}
 
-	a {
-		color:darkseagreen;
+	a.link {
+		color: darkseagreen;
+	}
+	a.title {
+		color: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+	}
+	a.title:visited {
+		color: inherit;
+	}
+	a.title:hover {
+		color: inherit;
 	}
 
 	@media (min-width: 640px) {

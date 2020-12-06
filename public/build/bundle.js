@@ -2874,41 +2874,46 @@ var app = (function () {
     	let main;
     	let h1;
     	let t0;
+    	let a0;
     	let t1;
     	let t2;
     	let t3;
-    	let p0;
     	let t4;
     	let t5;
-    	let p1;
+    	let p0;
     	let t6;
     	let t7;
-    	let p2;
+    	let p1;
     	let t8;
     	let t9;
-    	let p3;
+    	let p2;
     	let t10;
     	let t11;
-    	let div0;
+    	let p3;
     	let t12;
+    	let t13;
+    	let div0;
+    	let t14;
     	let div1;
     	let p4;
-    	let t13;
-    	let t14;
-    	let p5;
     	let t15;
     	let t16;
+    	let p5;
+    	let t17;
+    	let t18;
     	let div2;
     	let br;
-    	let t17;
-    	let p6;
-    	let t18;
-    	let a;
     	let t19;
+    	let p6;
     	let t20;
     	let t21;
-    	let button;
+    	let p7;
     	let t22;
+    	let a1;
+    	let t23;
+    	let t24;
+    	let button;
+    	let t25;
     	let current;
     	let mounted;
     	let dispose;
@@ -2928,47 +2933,52 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			t0 = text("🎄 Iterative ");
-    			t1 = text(/*name*/ ctx[0]);
-    			t2 = text(" By Talan! 🎄");
-    			t3 = space();
-    			p0 = element("p");
-    			t4 = text("❤️ Made with love by Talan Labs ❤️");
+    			t0 = text("🎄 ");
+    			a0 = element("a");
+    			t1 = text("Iterative");
+    			t2 = space();
+    			t3 = text(/*name*/ ctx[0]);
+    			t4 = text(" By Talan! 🎄");
     			t5 = space();
-    			p1 = element("p");
-    			t6 = text("Envie d'apprendre un savoir inutile et de gagner des cadeaux ?");
+    			p0 = element("p");
+    			t6 = text("❤️ Made with love by Talan Labs ❤️");
     			t7 = space();
-    			p2 = element("p");
-    			t8 = text("Clique sur la case du jour et réponds à la question posée.");
+    			p1 = element("p");
+    			t8 = text("Envie d'apprendre un savoir inutile et de gagner des cadeaux ?");
     			t9 = space();
-    			p3 = element("p");
-    			t10 = text("A vous de jouer !");
+    			p2 = element("p");
+    			t10 = text("Clique sur la case du jour et réponds à la question posée.");
     			t11 = space();
+    			p3 = element("p");
+    			t12 = text("A vous de jouer !");
+    			t13 = space();
     			div0 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t12 = space();
+    			t14 = space();
     			div1 = element("div");
     			p4 = element("p");
-    			t13 = text("A gagner : livres, cd, ballons de rugby, polos Stade Français, et plein d’autres surprises !  Avec en bonus un chèque cadeau pour celui qui répondra correctement à un maximum de questions.");
-    			t14 = space();
-    			p5 = element("p");
-    			t15 = text("La réponse et les gagnants seront annoncés le lendemain sur Workplace.");
+    			t15 = text("A gagner : livres, cd, ballons de rugby, polos Stade Français, et plein d’autres surprises !  Avec en bonus un chèque cadeau pour celui qui répondra correctement à un maximum de questions.");
     			t16 = space();
+    			p5 = element("p");
+    			t17 = text("La réponse et les gagnants seront annoncés le lendemain sur Workplace.");
+    			t18 = space();
     			div2 = element("div");
     			br = element("br");
-    			t17 = space();
+    			t19 = space();
     			p6 = element("p");
-    			t18 = text("Curious to see the iterative process behind the calendar?\n\tLook at the ");
-    			a = element("a");
-    			t19 = text("changelog");
-    			t20 = text(" of the app");
+    			t20 = text("Intéressé par le processus itératif derrière le developpement de ce calendrier?");
     			t21 = space();
+    			p7 = element("p");
+    			t22 = text("Vous pouvez consulter le ");
+    			a1 = element("a");
+    			t23 = text("changelog ici!");
+    			t24 = space();
     			button = element("button");
-    			t22 = text("reset progression");
+    			t25 = text("Reset Progression");
     			this.h();
     		},
     		l: function claim(nodes) {
@@ -2976,31 +2986,36 @@ var app = (function () {
     			var main_nodes = children(main);
     			h1 = claim_element(main_nodes, "H1", { class: true });
     			var h1_nodes = children(h1);
-    			t0 = claim_text(h1_nodes, "🎄 Iterative ");
-    			t1 = claim_text(h1_nodes, /*name*/ ctx[0]);
-    			t2 = claim_text(h1_nodes, " By Talan! 🎄");
+    			t0 = claim_text(h1_nodes, "🎄 ");
+    			a0 = claim_element(h1_nodes, "A", { class: true, href: true });
+    			var a0_nodes = children(a0);
+    			t1 = claim_text(a0_nodes, "Iterative");
+    			a0_nodes.forEach(detach_dev);
+    			t2 = claim_space(h1_nodes);
+    			t3 = claim_text(h1_nodes, /*name*/ ctx[0]);
+    			t4 = claim_text(h1_nodes, " By Talan! 🎄");
     			h1_nodes.forEach(detach_dev);
-    			t3 = claim_space(main_nodes);
+    			t5 = claim_space(main_nodes);
     			p0 = claim_element(main_nodes, "P", { class: true });
     			var p0_nodes = children(p0);
-    			t4 = claim_text(p0_nodes, "❤️ Made with love by Talan Labs ❤️");
+    			t6 = claim_text(p0_nodes, "❤️ Made with love by Talan Labs ❤️");
     			p0_nodes.forEach(detach_dev);
-    			t5 = claim_space(main_nodes);
+    			t7 = claim_space(main_nodes);
     			p1 = claim_element(main_nodes, "P", { class: true });
     			var p1_nodes = children(p1);
-    			t6 = claim_text(p1_nodes, "Envie d'apprendre un savoir inutile et de gagner des cadeaux ?");
+    			t8 = claim_text(p1_nodes, "Envie d'apprendre un savoir inutile et de gagner des cadeaux ?");
     			p1_nodes.forEach(detach_dev);
-    			t7 = claim_space(main_nodes);
+    			t9 = claim_space(main_nodes);
     			p2 = claim_element(main_nodes, "P", { class: true });
     			var p2_nodes = children(p2);
-    			t8 = claim_text(p2_nodes, "Clique sur la case du jour et réponds à la question posée.");
+    			t10 = claim_text(p2_nodes, "Clique sur la case du jour et réponds à la question posée.");
     			p2_nodes.forEach(detach_dev);
-    			t9 = claim_space(main_nodes);
+    			t11 = claim_space(main_nodes);
     			p3 = claim_element(main_nodes, "P", { class: true });
     			var p3_nodes = children(p3);
-    			t10 = claim_text(p3_nodes, "A vous de jouer !");
+    			t12 = claim_text(p3_nodes, "A vous de jouer !");
     			p3_nodes.forEach(detach_dev);
-    			t11 = claim_space(main_nodes);
+    			t13 = claim_space(main_nodes);
     			div0 = claim_element(main_nodes, "DIV", { class: true });
     			var div0_nodes = children(div0);
 
@@ -3009,115 +3024,129 @@ var app = (function () {
     			}
 
     			div0_nodes.forEach(detach_dev);
-    			t12 = claim_space(main_nodes);
+    			t14 = claim_space(main_nodes);
     			div1 = claim_element(main_nodes, "DIV", {});
     			var div1_nodes = children(div1);
     			p4 = claim_element(div1_nodes, "P", { class: true });
     			var p4_nodes = children(p4);
-    			t13 = claim_text(p4_nodes, "A gagner : livres, cd, ballons de rugby, polos Stade Français, et plein d’autres surprises !  Avec en bonus un chèque cadeau pour celui qui répondra correctement à un maximum de questions.");
+    			t15 = claim_text(p4_nodes, "A gagner : livres, cd, ballons de rugby, polos Stade Français, et plein d’autres surprises !  Avec en bonus un chèque cadeau pour celui qui répondra correctement à un maximum de questions.");
     			p4_nodes.forEach(detach_dev);
-    			t14 = claim_space(div1_nodes);
+    			t16 = claim_space(div1_nodes);
     			p5 = claim_element(div1_nodes, "P", { class: true });
     			var p5_nodes = children(p5);
-    			t15 = claim_text(p5_nodes, "La réponse et les gagnants seront annoncés le lendemain sur Workplace.");
+    			t17 = claim_text(p5_nodes, "La réponse et les gagnants seront annoncés le lendemain sur Workplace.");
     			p5_nodes.forEach(detach_dev);
     			div1_nodes.forEach(detach_dev);
-    			t16 = claim_space(main_nodes);
+    			t18 = claim_space(main_nodes);
     			div2 = claim_element(main_nodes, "DIV", {});
     			var div2_nodes = children(div2);
     			br = claim_element(div2_nodes, "BR", {});
-    			t17 = claim_space(div2_nodes);
+    			t19 = claim_space(div2_nodes);
     			p6 = claim_element(div2_nodes, "P", { class: true });
     			var p6_nodes = children(p6);
-    			t18 = claim_text(p6_nodes, "Curious to see the iterative process behind the calendar?\n\tLook at the ");
-    			a = claim_element(p6_nodes, "A", { href: true, class: true });
-    			var a_nodes = children(a);
-    			t19 = claim_text(a_nodes, "changelog");
-    			a_nodes.forEach(detach_dev);
-    			t20 = claim_text(p6_nodes, " of the app");
+    			t20 = claim_text(p6_nodes, "Intéressé par le processus itératif derrière le developpement de ce calendrier?");
     			p6_nodes.forEach(detach_dev);
     			t21 = claim_space(div2_nodes);
+    			p7 = claim_element(div2_nodes, "P", { class: true });
+    			var p7_nodes = children(p7);
+    			t22 = claim_text(p7_nodes, "Vous pouvez consulter le ");
+    			a1 = claim_element(p7_nodes, "A", { class: true, href: true });
+    			var a1_nodes = children(a1);
+    			t23 = claim_text(a1_nodes, "changelog ici!");
+    			a1_nodes.forEach(detach_dev);
+    			p7_nodes.forEach(detach_dev);
+    			t24 = claim_space(div2_nodes);
     			button = claim_element(div2_nodes, "BUTTON", {});
     			var button_nodes = children(button);
-    			t22 = claim_text(button_nodes, "reset progression");
+    			t25 = claim_text(button_nodes, "Reset Progression");
     			button_nodes.forEach(detach_dev);
     			div2_nodes.forEach(detach_dev);
     			main_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(h1, "class", "svelte-1o9vujn");
+    			attr_dev(a0, "class", "title svelte-gvfp1a");
+    			attr_dev(a0, "href", "/Changelog");
+    			add_location(a0, file$2, 103, 8, 2647);
+    			attr_dev(h1, "class", "svelte-gvfp1a");
     			add_location(h1, file$2, 103, 1, 2640);
-    			attr_dev(p0, "class", "svelte-1o9vujn");
-    			add_location(p0, file$2, 104, 1, 2683);
-    			attr_dev(p1, "class", "svelte-1o9vujn");
-    			add_location(p1, file$2, 106, 1, 2727);
-    			attr_dev(p2, "class", "svelte-1o9vujn");
-    			add_location(p2, file$2, 107, 1, 2799);
-    			attr_dev(p3, "class", "svelte-1o9vujn");
-    			add_location(p3, file$2, 109, 1, 2867);
-    			attr_dev(div0, "class", "box svelte-1o9vujn");
-    			add_location(div0, file$2, 111, 1, 2894);
-    			attr_dev(p4, "class", "svelte-1o9vujn");
-    			add_location(p4, file$2, 125, 1, 3269);
-    			attr_dev(p5, "class", "svelte-1o9vujn");
-    			add_location(p5, file$2, 127, 1, 3468);
-    			add_location(div1, file$2, 124, 1, 3262);
-    			add_location(br, file$2, 130, 1, 3561);
-    			attr_dev(a, "href", "/Changelog");
-    			attr_dev(a, "class", "svelte-1o9vujn");
-    			add_location(a, file$2, 132, 13, 3642);
-    			attr_dev(p6, "class", "svelte-1o9vujn");
-    			add_location(p6, file$2, 131, 1, 3568);
-    			add_location(button, file$2, 133, 0, 3693);
-    			add_location(div2, file$2, 129, 0, 3554);
-    			attr_dev(main, "class", "svelte-1o9vujn");
+    			attr_dev(p0, "class", "svelte-gvfp1a");
+    			add_location(p0, file$2, 104, 1, 2722);
+    			attr_dev(p1, "class", "svelte-gvfp1a");
+    			add_location(p1, file$2, 106, 1, 2766);
+    			attr_dev(p2, "class", "svelte-gvfp1a");
+    			add_location(p2, file$2, 107, 1, 2838);
+    			attr_dev(p3, "class", "svelte-gvfp1a");
+    			add_location(p3, file$2, 109, 1, 2906);
+    			attr_dev(div0, "class", "box svelte-gvfp1a");
+    			add_location(div0, file$2, 111, 1, 2933);
+    			attr_dev(p4, "class", "svelte-gvfp1a");
+    			add_location(p4, file$2, 125, 1, 3308);
+    			attr_dev(p5, "class", "svelte-gvfp1a");
+    			add_location(p5, file$2, 127, 1, 3507);
+    			add_location(div1, file$2, 124, 1, 3301);
+    			add_location(br, file$2, 130, 1, 3600);
+    			attr_dev(p6, "class", "svelte-gvfp1a");
+    			add_location(p6, file$2, 131, 1, 3607);
+    			attr_dev(a1, "class", "link svelte-gvfp1a");
+    			attr_dev(a1, "href", "/Changelog");
+    			add_location(a1, file$2, 132, 29, 3723);
+    			attr_dev(p7, "class", "svelte-gvfp1a");
+    			add_location(p7, file$2, 132, 1, 3695);
+    			add_location(button, file$2, 133, 0, 3780);
+    			add_location(div2, file$2, 129, 0, 3593);
+    			attr_dev(main, "class", "svelte-gvfp1a");
     			add_location(main, file$2, 99, 0, 2595);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
     			append_dev(h1, t0);
-    			append_dev(h1, t1);
+    			append_dev(h1, a0);
+    			append_dev(a0, t1);
     			append_dev(h1, t2);
-    			append_dev(main, t3);
-    			append_dev(main, p0);
-    			append_dev(p0, t4);
+    			append_dev(h1, t3);
+    			append_dev(h1, t4);
     			append_dev(main, t5);
-    			append_dev(main, p1);
-    			append_dev(p1, t6);
+    			append_dev(main, p0);
+    			append_dev(p0, t6);
     			append_dev(main, t7);
-    			append_dev(main, p2);
-    			append_dev(p2, t8);
+    			append_dev(main, p1);
+    			append_dev(p1, t8);
     			append_dev(main, t9);
-    			append_dev(main, p3);
-    			append_dev(p3, t10);
+    			append_dev(main, p2);
+    			append_dev(p2, t10);
     			append_dev(main, t11);
+    			append_dev(main, p3);
+    			append_dev(p3, t12);
+    			append_dev(main, t13);
     			append_dev(main, div0);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div0, null);
     			}
 
-    			append_dev(main, t12);
+    			append_dev(main, t14);
     			append_dev(main, div1);
     			append_dev(div1, p4);
-    			append_dev(p4, t13);
-    			append_dev(div1, t14);
+    			append_dev(p4, t15);
+    			append_dev(div1, t16);
     			append_dev(div1, p5);
-    			append_dev(p5, t15);
-    			append_dev(main, t16);
+    			append_dev(p5, t17);
+    			append_dev(main, t18);
     			append_dev(main, div2);
     			append_dev(div2, br);
-    			append_dev(div2, t17);
+    			append_dev(div2, t19);
     			append_dev(div2, p6);
-    			append_dev(p6, t18);
-    			append_dev(p6, a);
-    			append_dev(a, t19);
     			append_dev(p6, t20);
     			append_dev(div2, t21);
+    			append_dev(div2, p7);
+    			append_dev(p7, t22);
+    			append_dev(p7, a1);
+    			append_dev(a1, t23);
+    			append_dev(div2, t24);
     			append_dev(div2, button);
-    			append_dev(button, t22);
+    			append_dev(button, t25);
     			current = true;
 
     			if (!mounted) {
@@ -3126,7 +3155,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*name*/ 1) set_data_dev(t1, /*name*/ ctx[0]);
+    			if (!current || dirty & /*name*/ 1) set_data_dev(t3, /*name*/ ctx[0]);
 
     			if (dirty & /*calendarDays, $doorStore*/ 6) {
     				each_value = /*calendarDays*/ ctx[1];
@@ -4253,6 +4282,10 @@ var app = (function () {
     	let t0;
     	let t1;
     	let changelogs_1;
+    	let t2;
+    	let p;
+    	let a;
+    	let t3;
     	let current;
 
     	changelogs_1 = new Changelogs({
@@ -4267,6 +4300,10 @@ var app = (function () {
     			t0 = text("Changelog of the Advent Calendar");
     			t1 = space();
     			create_component(changelogs_1.$$.fragment);
+    			t2 = space();
+    			p = element("p");
+    			a = element("a");
+    			t3 = text("Back to Calendar Pages");
     			this.h();
     		},
     		l: function claim(nodes) {
@@ -4278,12 +4315,24 @@ var app = (function () {
     			h1_nodes.forEach(detach_dev);
     			t1 = claim_space(main_nodes);
     			claim_component(changelogs_1.$$.fragment, main_nodes);
+    			t2 = claim_space(main_nodes);
+    			p = claim_element(main_nodes, "P", {});
+    			var p_nodes = children(p);
+    			a = claim_element(p_nodes, "A", { href: true, class: true });
+    			var a_nodes = children(a);
+    			t3 = claim_text(a_nodes, "Back to Calendar Pages");
+    			a_nodes.forEach(detach_dev);
+    			p_nodes.forEach(detach_dev);
     			main_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(h1, "class", "svelte-1n6472z");
+    			attr_dev(h1, "class", "svelte-1ade283");
     			add_location(h1, file$6, 8, 4, 126);
+    			attr_dev(a, "href", "/");
+    			attr_dev(a, "class", "svelte-1ade283");
+    			add_location(a, file$6, 13, 7, 221);
+    			add_location(p, file$6, 13, 4, 218);
     			add_location(main, file$6, 7, 0, 115);
     		},
     		m: function mount(target, anchor) {
@@ -4292,6 +4341,10 @@ var app = (function () {
     			append_dev(h1, t0);
     			append_dev(main, t1);
     			mount_component(changelogs_1, main, null);
+    			append_dev(main, t2);
+    			append_dev(main, p);
+    			append_dev(p, a);
+    			append_dev(a, t3);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
