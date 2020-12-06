@@ -8,10 +8,8 @@ import postcss from 'rollup-plugin-postcss'
 import preprocess from 'svelte-preprocess'
 import json from '@rollup/plugin-json';
 
-
 import {config} from 'dotenv';
 import replace from '@rollup/plugin-replace';
-
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -65,9 +63,9 @@ export default {
 			}
 			}),
 		}),
-    json({
-      compact: true
-    }),
+		json({
+			compact: true
+		}),
 
 
 		// If you have external dependencies installed from

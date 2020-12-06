@@ -2,42 +2,54 @@
   "changes":[
     {
       "date":"2020-11-29",
+      "title": "Initial Commit :D",
       "content":[
         "initial MVP done with svelte"
       ]
     },
     {
       "date":"2020-11-30",
+      "title": "content from com",
       "content":[
         "photo for only 1 and 2 december"
       ]
     },
     {
       "date":"2020-12-01",
+      "title": "more content",
       "content":[
         "content for day 3 and 4"
       ]
     },
     {
       "date":"2020-12-02",
+      "title": "safari bug correction => chrome is magic",
       "content":[
         "correction of image display in safari"
       ]
     },
     {
       "date":"2020-12-03",
+      "title": "Ugly Christmas Sweater theme!",
       "content":[
         "awesome rework of the display - thanks Cecile Freyd-Foucault !"
       ]
     },
     {
       "date":"2020-12-04",
+      "title": "more content",
       "content":[
-        "adding content for 5 and 6 december",
+        "adding content for 5 and 6 december"
+      ]
+    },
+    {
+      "date":"2020-12-06",
+      "title": "Saint Nicolas Special :P",
+      "content":[
+        "reduce snow flakes size",
         "adding router in svelte",
         "introducing this changelog page"
       ]
     }
-
   ]
 }

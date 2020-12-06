@@ -6,7 +6,6 @@
     
     export let name = "";
 
-	console.log(__myapp.env);
 	let calendarDays = [];
 	//let startUpDateStr ="2020-11-25T00:00+01:00"
 	let startUpDateStr ="2020-11-30T00:00+01:00"
@@ -128,7 +127,11 @@
 	
 	<p>La réponse et les gagnants seront annoncés le lendemain sur Workplace.</p>
 	</div>
-<div><button on:click={resetProgression}>reset progression</button></div>
+<div>
+	<br/>
+	<p>Curious to see the iterative process behind the calendar?
+	Look at the <a href="/Changelog">changelog</a> of the app </p>
+<button on:click={resetProgression}>reset progression</button></div>
 </main>
 
 
@@ -162,6 +165,10 @@
 
 	p {
 		color: white;
+	}
+
+	a {
+		color:darkseagreen;
 	}
 
 	@media (min-width: 640px) {
