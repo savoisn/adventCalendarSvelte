@@ -2801,24 +2801,24 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
-    // (113:2) {#each calendarDays as doorNumber}
+    // (76:2) {#each calendarDays as doorNumber}
     function create_each_block(ctx) {
     	let door;
     	let current;
 
     	door = new Door({
     			props: {
-    				imagePath: /*doorNumber*/ ctx[13].reward.imagePath,
-    				rewardText: /*doorNumber*/ ctx[13].reward.rewardText,
-    				rewardLink: /*doorNumber*/ ctx[13].reward.rewardLink,
-    				doorNumber: /*doorNumber*/ ctx[13].day,
-    				doorOpen: /*doorNumber*/ ctx[13].day <= /*$doorStore*/ ctx[2],
-    				canOpen: /*doorNumber*/ ctx[13].canOpen,
-    				doorId: /*doorNumber*/ ctx[13].id
+    				imagePath: /*doorNumber*/ ctx[12].reward.imagePath,
+    				rewardText: /*doorNumber*/ ctx[12].reward.rewardText,
+    				rewardLink: /*doorNumber*/ ctx[12].reward.rewardLink,
+    				doorNumber: /*doorNumber*/ ctx[12].day,
+    				doorOpen: /*doorNumber*/ ctx[12].day <= /*$doorStore*/ ctx[2],
+    				canOpen: /*doorNumber*/ ctx[12].canOpen,
+    				doorId: /*doorNumber*/ ctx[12].id
     			},
     			$$inline: true
     		});
@@ -2836,13 +2836,13 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const door_changes = {};
-    			if (dirty & /*calendarDays*/ 2) door_changes.imagePath = /*doorNumber*/ ctx[13].reward.imagePath;
-    			if (dirty & /*calendarDays*/ 2) door_changes.rewardText = /*doorNumber*/ ctx[13].reward.rewardText;
-    			if (dirty & /*calendarDays*/ 2) door_changes.rewardLink = /*doorNumber*/ ctx[13].reward.rewardLink;
-    			if (dirty & /*calendarDays*/ 2) door_changes.doorNumber = /*doorNumber*/ ctx[13].day;
-    			if (dirty & /*calendarDays, $doorStore*/ 6) door_changes.doorOpen = /*doorNumber*/ ctx[13].day <= /*$doorStore*/ ctx[2];
-    			if (dirty & /*calendarDays*/ 2) door_changes.canOpen = /*doorNumber*/ ctx[13].canOpen;
-    			if (dirty & /*calendarDays*/ 2) door_changes.doorId = /*doorNumber*/ ctx[13].id;
+    			if (dirty & /*calendarDays*/ 2) door_changes.imagePath = /*doorNumber*/ ctx[12].reward.imagePath;
+    			if (dirty & /*calendarDays*/ 2) door_changes.rewardText = /*doorNumber*/ ctx[12].reward.rewardText;
+    			if (dirty & /*calendarDays*/ 2) door_changes.rewardLink = /*doorNumber*/ ctx[12].reward.rewardLink;
+    			if (dirty & /*calendarDays*/ 2) door_changes.doorNumber = /*doorNumber*/ ctx[12].day;
+    			if (dirty & /*calendarDays, $doorStore*/ 6) door_changes.doorOpen = /*doorNumber*/ ctx[12].day <= /*$doorStore*/ ctx[2];
+    			if (dirty & /*calendarDays*/ 2) door_changes.canOpen = /*doorNumber*/ ctx[12].canOpen;
+    			if (dirty & /*calendarDays*/ 2) door_changes.doorId = /*doorNumber*/ ctx[12].id;
     			door.$set(door_changes);
     		},
     		i: function intro(local) {
@@ -2863,7 +2863,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(113:2) {#each calendarDays as doorNumber}",
+    		source: "(76:2) {#each calendarDays as doorNumber}",
     		ctx
     	});
 
@@ -3067,36 +3067,36 @@ var app = (function () {
     		h: function hydrate() {
     			attr_dev(a0, "class", "title svelte-gvfp1a");
     			attr_dev(a0, "href", "/Changelog");
-    			add_location(a0, file$2, 103, 8, 2647);
+    			add_location(a0, file$2, 66, 8, 1385);
     			attr_dev(h1, "class", "svelte-gvfp1a");
-    			add_location(h1, file$2, 103, 1, 2640);
+    			add_location(h1, file$2, 66, 1, 1378);
     			attr_dev(p0, "class", "svelte-gvfp1a");
-    			add_location(p0, file$2, 104, 1, 2722);
+    			add_location(p0, file$2, 67, 1, 1460);
     			attr_dev(p1, "class", "svelte-gvfp1a");
-    			add_location(p1, file$2, 106, 1, 2766);
+    			add_location(p1, file$2, 69, 1, 1504);
     			attr_dev(p2, "class", "svelte-gvfp1a");
-    			add_location(p2, file$2, 107, 1, 2838);
+    			add_location(p2, file$2, 70, 1, 1576);
     			attr_dev(p3, "class", "svelte-gvfp1a");
-    			add_location(p3, file$2, 109, 1, 2906);
+    			add_location(p3, file$2, 72, 1, 1644);
     			attr_dev(div0, "class", "box svelte-gvfp1a");
-    			add_location(div0, file$2, 111, 1, 2933);
+    			add_location(div0, file$2, 74, 1, 1671);
     			attr_dev(p4, "class", "svelte-gvfp1a");
-    			add_location(p4, file$2, 125, 1, 3308);
+    			add_location(p4, file$2, 88, 1, 2046);
     			attr_dev(p5, "class", "svelte-gvfp1a");
-    			add_location(p5, file$2, 127, 1, 3507);
-    			add_location(div1, file$2, 124, 1, 3301);
-    			add_location(br, file$2, 130, 1, 3600);
+    			add_location(p5, file$2, 90, 1, 2245);
+    			add_location(div1, file$2, 87, 1, 2039);
+    			add_location(br, file$2, 93, 1, 2338);
     			attr_dev(p6, "class", "svelte-gvfp1a");
-    			add_location(p6, file$2, 131, 1, 3607);
+    			add_location(p6, file$2, 94, 1, 2345);
     			attr_dev(a1, "class", "link svelte-gvfp1a");
     			attr_dev(a1, "href", "/Changelog");
-    			add_location(a1, file$2, 132, 29, 3723);
+    			add_location(a1, file$2, 95, 29, 2461);
     			attr_dev(p7, "class", "svelte-gvfp1a");
-    			add_location(p7, file$2, 132, 1, 3695);
-    			add_location(button, file$2, 133, 0, 3780);
-    			add_location(div2, file$2, 129, 0, 3593);
+    			add_location(p7, file$2, 95, 1, 2433);
+    			add_location(button, file$2, 96, 0, 2518);
+    			add_location(div2, file$2, 92, 0, 2331);
     			attr_dev(main, "class", "svelte-gvfp1a");
-    			add_location(main, file$2, 99, 0, 2595);
+    			add_location(main, file$2, 62, 0, 1333);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
@@ -3230,64 +3230,24 @@ var app = (function () {
     	validate_slots("Calendar", slots, []);
     	let { name = "" } = $$props;
     	let calendarDays = [];
-
-    	//let startUpDateStr ="2020-11-25T00:00+01:00"
-    	let startUpDateStr = "2020-11-30T00:00+01:00";
-
-    	let startUpDate = Date.parse(startUpDateStr);
     	let currentDate = Date.now();
     	let nbDays = 1;
     	let door_numbers = [...Array(25).keys()];
     	let random_door_numbers = door_numbers.map(a => ({ sort: Math.random(), value: a })).sort((a, b) => a.sort - b.sort).map(a => a.value);
+    	let offset = 0;
+    	let isProd = {"env":{"isProd":false,"API_URL":"http://localhost:8080"}}.env.isProd;
 
-    	function defineNbDays() {
-    		let diff = currentDate - startUpDate;
-    		nbDays = Math.floor(diff / (1000 * 3600 * 24));
+    	if (!isProd) {
+    		offset = 7;
     	}
 
-    	let rewards = {
-    		0: {
-    			imagePath: "/build/images/1.png",
-    			rewardText: "",
-    			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"
-    		},
-    		1: {
-    			imagePath: "/build/images/2.jpg",
-    			rewardText: "",
-    			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQldYUVA2RkdISVVMQTNTVkdBVUNPWkJJUy4u"
-    		},
-    		2: {
-    			imagePath: "/build/images/3.jpg",
-    			rewardText: "",
-    			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMkZERjAyVDZRNTZKVDdHSUFVOTJSOFYzRi4u"
-    		},
-    		3: {
-    			imagePath: "/build/images/4.png",
-    			rewardText: "",
-    			rewardLink: "https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"
-    		},
-    		4: {
-    			imagePath: "/build/images/5.png",
-    			rewardText: "",
-    			rewardLink: ""
-    		},
-    		5: {
-    			imagePath: "/build/images/6.png",
-    			rewardText: "",
-    			rewardLink: ""
-    		},
-    		6: {
-    			imagePath: "/build/images/christmas-tree.png",
-    			rewardText: "",
-    			rewardLink: ""
-    		}
-    	};
+    	let { calendarDate = {} } = $$props;
 
     	onMount(async () => {
     		// await fetch({"env":{"isProd":false,"API_URL":"http://localhost:8080"}}.env.API_URL+"/daySinceFirstDec")
     		await fetch("https://advent-calendar-api-talan.cleverapps.io/daySinceFirstDec").then(r => r.json()).then(data => {
     			if (data.daySinceFirstDec) {
-    				nbDays = parseInt(data.daySinceFirstDec);
+    				nbDays = parseInt(data.daySinceFirstDec) + offset;
     				let id = 1; //j'ai honte je suis desole devant le reste du monde mais j'ai pas le temps... :D
 
     				for (let i of random_door_numbers) {
@@ -3296,7 +3256,7 @@ var app = (function () {
     					calendarDays.push({
     						day,
     						canOpen: canOpen(day),
-    						reward: rewards[day - 1] ? rewards[day - 1] : "",
+    						reward: calendarDate[day - 1] ? calendarDate[day - 1] : "",
     						id
     					});
 
@@ -3316,7 +3276,7 @@ var app = (function () {
     		doorStore.reset();
     	}
 
-    	const writable_props = ["name"];
+    	const writable_props = ["name", "calendarDate"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Calendar> was created with unknown prop '${key}'`);
@@ -3324,6 +3284,7 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("calendarDate" in $$props) $$invalidate(4, calendarDate = $$props.calendarDate);
     	};
 
     	$$self.$capture_state = () => ({
@@ -3332,14 +3293,13 @@ var app = (function () {
     		doorStore,
     		name,
     		calendarDays,
-    		startUpDateStr,
-    		startUpDate,
     		currentDate,
     		nbDays,
     		door_numbers,
     		random_door_numbers,
-    		defineNbDays,
-    		rewards,
+    		offset,
+    		isProd,
+    		calendarDate,
     		canOpen,
     		resetProgression,
     		$doorStore
@@ -3348,26 +3308,26 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     		if ("calendarDays" in $$props) $$invalidate(1, calendarDays = $$props.calendarDays);
-    		if ("startUpDateStr" in $$props) startUpDateStr = $$props.startUpDateStr;
-    		if ("startUpDate" in $$props) startUpDate = $$props.startUpDate;
     		if ("currentDate" in $$props) currentDate = $$props.currentDate;
     		if ("nbDays" in $$props) nbDays = $$props.nbDays;
     		if ("door_numbers" in $$props) door_numbers = $$props.door_numbers;
     		if ("random_door_numbers" in $$props) random_door_numbers = $$props.random_door_numbers;
-    		if ("rewards" in $$props) rewards = $$props.rewards;
+    		if ("offset" in $$props) offset = $$props.offset;
+    		if ("isProd" in $$props) isProd = $$props.isProd;
+    		if ("calendarDate" in $$props) $$invalidate(4, calendarDate = $$props.calendarDate);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, calendarDays, $doorStore, resetProgression];
+    	return [name, calendarDays, $doorStore, resetProgression, calendarDate];
     }
 
     class Calendar extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, { name: 0 });
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, { name: 0, calendarDate: 4 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -3382,6 +3342,14 @@ var app = (function () {
     	}
 
     	set name(value) {
+    		throw new Error("<Calendar>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get calendarDate() {
+    		throw new Error("<Calendar>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set calendarDate(value) {
     		throw new Error("<Calendar>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -4442,18 +4410,29 @@ var app = (function () {
         'default': changelog
     });
 
+    var days={"0":{imagePath:"/build/images/1.png",rewardText:"",rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"},"1":{imagePath:"/build/images/2.jpg",rewardText:"",rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQldYUVA2RkdISVVMQTNTVkdBVUNPWkJJUy4u"},"2":{imagePath:"/build/images/3.jpg",rewardText:"",rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMkZERjAyVDZRNTZKVDdHSUFVOTJSOFYzRi4u"},"3":{imagePath:"/build/images/4.png",rewardText:"",rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"},"4":{imagePath:"/build/images/5.png",rewardText:"",rewardLink:""},"5":{imagePath:"/build/images/6.png",rewardText:"",rewardLink:""},"6":{imagePath:"/build/images/7.png",rewardText:"",rewardLink:"https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fforms.office.com%2FPages%2FResponsePage.aspx%3Fid%3DUoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQkMxOEU1TVpXTzVEUlpPWDZLWlhJMElRSi4u&data=04%7C01%7Cnicolas.savois%40talan.com%7C37852f36ccef4bbb257608d89a89d739%7C6f07f79b03b144e1b2217fa1001b22ac%7C0%7C0%7C637429264096185537%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=dcAnZvHnVsefXuZHt7hmj0qse4oJyLAv1LDaxJ7CpQc%3D&reserved=0"},"7":{imagePath:"/build/images/8.png",rewardText:"",rewardLink:"https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fforms.office.com%2FPages%2FResponsePage.aspx%3Fid%3DUoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMEhHUUw5S1BPMVpVSzZZTDBSMFRRTUMwSy4u&data=04%7C01%7Cnicolas.savois%40talan.com%7C37852f36ccef4bbb257608d89a89d739%7C6f07f79b03b144e1b2217fa1001b22ac%7C0%7C0%7C637429264096195491%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=0HcMh1u23ZWQKWixS%2BvUNS61AFYBNQe4HCyNjRmjMk8%3D&reserved=0"},"8":{imagePath:"/build/images/9.png",rewardText:"",rewardLink:"https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fforms.office.com%2FPages%2FResponsePage.aspx%3Fid%3DUoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQ0FVMTU4RFI5NlFMR1lXWDhLQUZNVVIySC4u&data=04%7C01%7Cnicolas.savois%40talan.com%7C37852f36ccef4bbb257608d89a89d739%7C6f07f79b03b144e1b2217fa1001b22ac%7C0%7C0%7C637429264096195491%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=vcvTJyfdorp1mJvDlyNrqH7%2B8N%2B5qxwsudmVLgCcdag%3D&reserved=0"},"9":{imagePath:"/build/images/10.png",rewardText:"",rewardLink:"https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fforms.office.com%2FPages%2FResponsePage.aspx%3Fid%3DUoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UNkw1NlBRNThFQzZCUFEyNEI5R0U3T05IUS4u&data=04%7C01%7Cnicolas.savois%40talan.com%7C37852f36ccef4bbb257608d89a89d739%7C6f07f79b03b144e1b2217fa1001b22ac%7C0%7C0%7C637429264096205451%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=zXNW5ctC8OZAlfoRqbjaSVcozyG4rHJRMwcrGwfxVFQ%3D&reserved=0"},"10":{imagePath:"/build/images/11.png",rewardText:"",rewardLink:"https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fforms.office.com%2FPages%2FResponsePage.aspx%3Fid%3DUoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UNUJPTjJKMVIyQk9TSkw3QUFaV0hWS1BVVy4u&data=04%7C01%7Cnicolas.savois%40talan.com%7C37852f36ccef4bbb257608d89a89d739%7C6f07f79b03b144e1b2217fa1001b22ac%7C0%7C0%7C637429264096205451%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=vW9%2B%2B5D6hwwYVOPtihxoVZ5%2BUSghWbPRIlHsnNV9%2BsY%3D&reserved=0"},"11":{imagePath:"/build/images/12.png",rewardText:"",rewardLink:""},"12":{imagePath:"/build/images/13.png",rewardText:"",rewardLink:""}};var calendarTalanData = {days:days};
+
+    var calendarData = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        days: days,
+        'default': calendarTalanData
+    });
+
     /* src/App.svelte generated by Svelte v3.30.0 */
 
     const { console: console_1 } = globals;
     const file$7 = "src/App.svelte";
 
-    // (28:2) <Route path="/">
+    // (29:2) <Route path="/">
     function create_default_slot_6(ctx) {
     	let calendar;
     	let current;
 
     	calendar = new Calendar({
-    			props: { name: /*name*/ ctx[0] },
+    			props: {
+    				name: /*name*/ ctx[0],
+    				calendarDate: days
+    			},
     			$$inline: true
     		});
 
@@ -4491,14 +4470,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(28:2) <Route path=\\\"/\\\">",
+    		source: "(29:2) <Route path=\\\"/\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (29:2) <Route path="/Changelog" >
+    // (30:2) <Route path="/Changelog" >
     function create_default_slot_5(ctx) {
     	let changelogroute;
     	let current;
@@ -4538,14 +4517,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(29:2) <Route path=\\\"/Changelog\\\" >",
+    		source: "(30:2) <Route path=\\\"/Changelog\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:2) <Route path="/Firework" >
+    // (31:2) <Route path="/Firework" >
     function create_default_slot_4(ctx) {
     	let fireworks;
     	let current;
@@ -4580,14 +4559,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(30:2) <Route path=\\\"/Firework\\\" >",
+    		source: "(31:2) <Route path=\\\"/Firework\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:2) {#if !isProd}
+    // (35:2) {#if !isProd}
     function create_if_block$2(ctx) {
     	let link0;
     	let t0;
@@ -4673,14 +4652,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(34:2) {#if !isProd}",
+    		source: "(35:2) {#if !isProd}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (35:2) <Link to="/">
+    // (36:2) <Link to="/">
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -4703,14 +4682,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(35:2) <Link to=\\\"/\\\">",
+    		source: "(36:2) <Link to=\\\"/\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (36:2) <Link to="/Changelog">
+    // (37:2) <Link to="/Changelog">
     function create_default_slot_2(ctx) {
     	let t;
 
@@ -4733,14 +4712,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(36:2) <Link to=\\\"/Changelog\\\">",
+    		source: "(37:2) <Link to=\\\"/Changelog\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:3) <Link to="/Firework" class="link">
+    // (38:3) <Link to="/Firework" class="link">
     function create_default_slot_1(ctx) {
     	let t;
 
@@ -4763,14 +4742,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(37:3) <Link to=\\\"/Firework\\\" class=\\\"link\\\">",
+    		source: "(38:3) <Link to=\\\"/Firework\\\" class=\\\"link\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (26:0) <Router url="{url}">
+    // (27:0) <Router url="{url}">
     function create_default_slot$1(ctx) {
     	let div;
     	let route0;
@@ -4841,9 +4820,9 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(div, file$7, 26, 1, 682);
-    			attr_dev(nav, "class", "svelte-yc11g9");
-    			add_location(nav, file$7, 32, 1, 892);
+    			add_location(div, file$7, 27, 1, 746);
+    			attr_dev(nav, "class", "svelte-1tun0fy");
+    			add_location(nav, file$7, 33, 1, 989);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4910,7 +4889,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(26:0) <Router url=\\\"{url}\\\">",
+    		source: "(27:0) <Router url=\\\"{url}\\\">",
     		ctx
     	});
 
@@ -4948,7 +4927,7 @@ var app = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(div, "id", "particles-js");
-    			add_location(div, file$7, 23, 0, 628);
+    			add_location(div, file$7, 24, 0, 692);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5022,6 +5001,7 @@ var app = (function () {
     		ChangelogRoute,
     		FireWorks,
     		changelogs,
+    		calendarData,
     		name,
     		url,
     		isProd

@@ -7,9 +7,6 @@
     export let name = "";
 
 	let calendarDays = [];
-	//let startUpDateStr ="2020-11-25T00:00+01:00"
-	let startUpDateStr ="2020-11-30T00:00+01:00"
-	let startUpDate = Date.parse(startUpDateStr);
 
 	let currentDate = Date.now();
 
@@ -21,48 +18,14 @@
 	.sort((a, b) => a.sort - b.sort)
 	.map((a) => a.value)
 	
-	function defineNbDays(){
-		let diff = currentDate - startUpDate
-		nbDays = Math.floor(diff / (1000 * 3600 * 24));
+	let offset = 0;
+	let isProd = __myapp.env.isProd;
+
+	if(!isProd){
+		offset = 7;
 	}
 
-	let rewards = {
-		0:{
-			imagePath:"/build/images/1.png",
-			rewardText:"",
-			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMDNWVldUV1JXTFY5TElNMERZNTBBMDFRMS4u"
-		},
-		1:{
-			imagePath:"/build/images/2.jpg",
-			rewardText:"",
-			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UQldYUVA2RkdISVVMQTNTVkdBVUNPWkJJUy4u"
-		},
-		2:{
-			imagePath:"/build/images/3.jpg",
-			rewardText:"",
-			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMkZERjAyVDZRNTZKVDdHSUFVOTJSOFYzRi4u"
-		},
-		3:{
-			imagePath:"/build/images/4.png",
-			rewardText:"",
-			rewardLink:"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UMFJJVzFQT1lJSkhNSTBRRTg0R1BUVlZZQy4u"
-		},
-		4:{
-			imagePath:"/build/images/5.png",
-			rewardText:"",
-			rewardLink:""
-		},
-		5:{
-			imagePath:"/build/images/6.png",
-			rewardText:"",
-			rewardLink:""
-		},
-		6:{
-			imagePath:"/build/images/christmas-tree.png",
-			rewardText:"",
-			rewardLink:""
-		}
-	}
+	export let calendarDate={};
 
 	onMount(async () => {
 	// await fetch(__myapp.env.API_URL+"/daySinceFirstDec")
@@ -70,14 +33,14 @@
 		.then(r => r.json())
 		.then(data => {
 			if(data.daySinceFirstDec){
-				nbDays = parseInt(data.daySinceFirstDec);
+				nbDays = parseInt(data.daySinceFirstDec) + offset;
 				let id = 1 //j'ai honte je suis desole devant le reste du monde mais j'ai pas le temps... :D
 				for(let i of random_door_numbers){
 					const day = parseInt(i) + 1
 					calendarDays.push({
 						day:day, 
 						canOpen:canOpen(day),
-						reward:rewards[day-1]?rewards[day-1]:"",
+						reward:calendarDate[day-1]?calendarDate[day-1]:"",
 						id:id
 					})
 					id++;

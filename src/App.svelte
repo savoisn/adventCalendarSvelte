@@ -11,6 +11,7 @@
 	import FireWorks from './components/FireWorks.svelte';
 
     import * as changelogs from '../changelog.json'
+    import * as calendarData from '../calendar-talan-data.json'
 	export let name='';
 
 	export let url = "";
@@ -25,7 +26,7 @@
 
 <Router url="{url}">
 	<div>
-		<Route path="/"><Calendar name={name}></Calendar></Route>
+		<Route path="/"><Calendar name={name} calendarDate={calendarData.days}></Calendar></Route>
 		<Route path="/Changelog" ><ChangelogRoute changelogs={changelogs.changes}/></Route>
 		<Route path="/Firework" ><FireWorks/></Route>
 	</div>
@@ -42,17 +43,5 @@
 <style>
 	nav{
 		padding-left: 20px;
-	}
-	.link > :global(a) {
-		text-decoration: none;
-		color : cyan;
-	}
-	:global(a){
-		text-decoration: none;
-		color : greenyellow;
-	}
-	a {
-		text-decoration: none;
-		color : greenyellow;
 	}
 </style>
