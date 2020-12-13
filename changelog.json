@@ -50,6 +50,16 @@
         "adding router in svelte",
         "introducing this changelog page"
       ]
+    },
+    {
+      "date":"2020-12-13",
+      "title": "Firework day!",
+      "content":[
+        "Can't open door if previous one is not open",
+        "When opening a new door, a big door opens, but not if door was previously opened",
+        "Firework when user opens a big door !",
+        "adding content for 14 to 18"
+      ]
     }
   ]
 }

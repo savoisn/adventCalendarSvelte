@@ -1,22 +1,49 @@
 <script>
   export let doorNumber = 12;
   export let doorId = 1;
-  export let canOpen = true;
+  export let canOpen = function(){};
+  export let isAlreadyOpened = function(){};
   export let imagePath = "";
-  export let rewardText = "";
   export let rewardLink = "";
   export let doorOpen = false;
   export let imageAlt = "";
+  export let action = function(){};
+
+
+  export let size = "small";
+
+  export function sizes(){
+    return door_sizes.keys();
+  }
+
+  import doorStore from '.../../../store.js'
 
   function toggleDoor() {
-    if(canOpen){
-      doorOpen=!doorOpen
+    let doorInfo = {
+      reward:{
+        imagePath: imagePath,
+        rewardLink: rewardLink
+      },
+      day: doorNumber,
+      canOpen: canOpen,
+      doorId: doorId
+    }
+
+    if(canOpen(doorNumber) === true){
+      if(doorOpen === true){
+        doorOpen = false
+      } else {
+        doorOpen = true
+      }
+      if(action && doorOpen && !isAlreadyOpened(doorNumber)){
+        action({...doorInfo});
+      }
+
       doorStore.addDoor(doorNumber)
     }else{
       doorOpen=false;
     }
   } 
-  import doorStore from './store.js'
   let emojis = [
     "🎅",
     "🤶",
@@ -33,12 +60,31 @@
   function getRandomEmoji(){
     return emojis[Math.floor(Math.random() * emojis.length)];
   }
+
+  let door_sizes = {
+    "small" : {
+      ratio:1
+    },
+    "medium" : {
+      ratio:2
+    },
+    "big" : {
+      ratio:3
+    }
+  }
+
+  let ratio = door_sizes[size].ratio;
+
 </script>
 
 <main
   class:mainBorderOdd={doorId%2==0}
-  class:mainBorderEven={doorId%2!=0} >
-  <div class="backDoor" style='--imagePath: url("{imagePath}")'>
+  class:mainBorderEven={doorId%2!=0} 
+  style='
+    --ratio: {ratio};
+    '>
+
+  <div class="backDoor" >
     {#if rewardLink !== ""}
       <a href={rewardLink} target="_blank">
         <img src="{imagePath}" alt="{imageAlt}" class="bgImg"/>
@@ -47,7 +93,7 @@
       <img src="{imagePath}" alt="{imageAlt}" class="bgImg"/>
     {/if}
     <div class="door" 
-          class:doorOpen={doorOpen}  
+          class:doorOpen={doorOpen===true}  
           class:door-odd={doorId%2==0}
           class:door-even={doorId%2!=0}
           on:click={toggleDoor} >
@@ -57,16 +103,11 @@
 </main>
 
 <style>
-
-:root {
-  --door-width: 100px;
-  --door-height: 150px;
-  --margin: 25px;
-  --margin-left:35px;
-  --door-number-fontsize:45px;
-}
 main {
-
+  --door-width: calc(var(--ratio) * 100px);
+  --door-height: calc(var(--ratio) * 150px);
+  --margin: calc(var(--ratio) * 25px);
+  --door-number-fontsize:calc(var(--ratio) * 45px);
   border-radius: 9px;
   margin:var(--margin);
 }
@@ -84,41 +125,17 @@ main {
   height: var(--door-height);
   transition: transform .2s; /* Animation */
   text-decoration: none;
-  display:flex;
-
-}
-
-.bgImg{
-  width:100%;
-  height:100%;
+  display:flex;  
+  justify-content: center;
   align-items: center;
 }
 
-.backgroundPicture {
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: var(--door-width);
-  height: var(--door-height);
-  background-position: center;
-}
-
-.backgroundText{
-  width: var(--door-width);
-  height: var(--door-height);
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-}
-
-.bgSpan{
-  color: blue;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  overflow: hidden;
-  display: inline-block;
-  text-overflow: ellipsis; 
+.bgImg{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
 }
 
 .door {
@@ -137,8 +154,6 @@ main {
   display:flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .door-even {

@@ -12,6 +12,7 @@
 
     import * as changelogs from '../changelog.json'
     import * as calendarData from '../calendar-talan-data.json'
+import Modal from './components/Modal.svelte';
 	export let name='';
 
 	export let url = "";
@@ -23,23 +24,24 @@
 </script>
 
 <div id="particles-js"></div> 
-
+<Modal>
 <Router url="{url}">
+	{#if !isProd}
+	<nav>
+		<Link to="/">Home</Link>
+		<Link to="/Changelog">Changelog</Link>
+		<Link to="/Firework">Firework</Link>
+	</nav>
+	{/if}
+
 	<div>
 		<Route path="/"><Calendar name={name} calendarDate={calendarData.days}></Calendar></Route>
 		<Route path="/Changelog" ><ChangelogRoute changelogs={changelogs.changes}/></Route>
 		<Route path="/Firework" ><FireWorks/></Route>
 	</div>
 
-	<nav>
-		{#if !isProd}
-		<Link to="/">Home</Link>
-		<Link to="/Changelog">Changelog</Link>
-			<Link to="/Firework" class="link">Firework</Link>
-		{/if}
-	</nav>
 </Router>
-
+</Modal>
 <style>
 	nav{
 		padding-left: 20px;

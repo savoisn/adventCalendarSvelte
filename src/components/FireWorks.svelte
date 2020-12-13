@@ -1,9 +1,9 @@
 <script>
 import { onMount } from "svelte";
 
+let element;
 
-
-    // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
+// when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
 window.requestAnimFrame = ( function() {
 	return window.requestAnimationFrame ||
@@ -16,9 +16,6 @@ window.requestAnimFrame = ( function() {
 
 let canvas;
 // now we will setup our basic variables for the demo
-onMount(()=>{
-
-    let ctx = canvas.getContext( '2d' );
             // full screen dimensions
     let cw = window.innerWidth;
     let ch = window.innerHeight,
@@ -27,26 +24,17 @@ onMount(()=>{
             // particle collection
             particles = [],
             // starting hue
-            hue = 120,
-            // when launching fireworks with a click, too many get launched at once without a limiter, one launch per 5 loop ticks
-            limiterTotal = 5,
-            limiterTick = 0,
-            // this will time the auto launches of fireworks, one launch per 80 loop ticks
-            timerTotal = 80,
-            timerTick = 0,
-            mousedown = false,
-            // mouse x coordinate,
-            mx,
-            // mouse y coordinate
-            my;
+            hue = 120;
+    let ctx = null;
+onMount(()=>{
+
+    ctx = canvas.getContext( '2d' );
             
     // set canvas dimensions
     canvas.width = cw;
     canvas.height = ch;
 
-    // now we are going to setup our function placeholders for the entire demo
-
-    // get a random number within a range
+})
     function random( min, max ) {
         return Math.random() * ( max - min ) + min;
     }
@@ -201,98 +189,64 @@ onMount(()=>{
         }
     }
 
-    // main demo loop
-    function loop() {
-        // this function will run endlessly with requestAnimationFrame
-        requestAnimFrame( loop );
-        
-        // increase the hue to get different colored fireworks over time
-        //hue += 0.5;
+export const startFW = showOneFW
+
+function showOneFW(){
+    element.style.zIndex = 200;
+    totalTick = 0;
+    renderFW()
+}
+
+function destroySelf(){
+    element.style.zIndex = 0;
+}
+
+let totalTick = 0;
+function renderFW(){
+    hue=random(0, 360 );
     
-    // create random color
-    hue= random(0, 360 );
-        
-        // normally, clearRect() would be used to clear the canvas
-        // we want to create a trailing effect though
-        // setting the composite operation to destination-out will allow us to clear the canvas at a specific opacity, rather than wiping it entirely
-        ctx.globalCompositeOperation = 'destination-out';
-        // decrease the alpha property to create more prominent trails
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-        ctx.fillRect( 0, 0, cw, ch );
-        // change the composite operation back to our main mode
-        // lighter creates bright highlight points as the fireworks and particles overlap each other
-        ctx.globalCompositeOperation = 'lighter';
-        
-        // loop over each firework, draw it, update it
-        var i = fireworks.length;
-        while( i-- ) {
-            fireworks[ i ].draw();
-            fireworks[ i ].update( i );
-        }
-        
-        // loop over each particle, draw it, update it
-        var i = particles.length;
-        while( i-- ) {
-            particles[ i ].draw();
-            particles[ i ].update( i );
-        }
-        
-        // launch fireworks automatically to random coordinates, when the mouse isn't down
-        if( timerTick >= timerTotal ) {
-            if( !mousedown ) {
-                // start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
-                fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
-                timerTick = 0;
-            }
-        } else {
-            timerTick++;
-        }
-        
-        // limit the rate at which fireworks get launched when mouse is down
-        if( limiterTick >= limiterTotal ) {
-            if( mousedown ) {
-                // start the firework at the bottom middle of the screen, then set the current mouse coordinates as the target
-                fireworks.push( new Firework( cw / 2, ch, mx, my ) );
-                limiterTick = 0;
-            }
-        } else {
-            limiterTick++;
-        }
+    // normally, clearRect() would be used to clear the canvas
+    // we want to create a trailing effect though
+    // setting the composite operation to destination-out will allow us to clear the canvas at a specific opacity, rather than wiping it entirely
+    ctx.globalCompositeOperation = 'destination-out';
+    // decrease the alpha property to create more prominent trails
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.fillRect( 0, 0, cw, ch );
+    // change the composite operation back to our main mode
+    // lighter creates bright highlight points as the fireworks and particles overlap each other
+    ctx.globalCompositeOperation = 'lighter';
+    // let fw = new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) );
+    if(totalTick<200){
+        fireworks.push( new Firework( cw / 2, ch, random( 0, cw ), random( 0, ch / 2 ) ) );
+    }
+    totalTick++;
+
+    if(totalTick<300){
+        requestAnimFrame( renderFW );
+    }else{
+        destroySelf()
     }
 
-    // mouse event bindings
-    // update the mouse coordinates on mousemove
-    canvas.addEventListener( 'mousemove', function( e ) {
-        mx = e.pageX - canvas.offsetLeft;
-        my = e.pageY - canvas.offsetTop;
-    });
-
-    // toggle mousedown state and prevent canvas from being selected
-    canvas.addEventListener( 'mousedown', function( e ) {
-        e.preventDefault();
-        mousedown = true;
-    });
-
-    canvas.addEventListener( 'mouseup', function( e ) {
-        e.preventDefault();
-        mousedown = false;
-    });
-
-    // once the window loads, we are ready for some fireworks!
-    loop();
-})
-
-
+    var i = fireworks.length;
+    while( i-- ) {
+        fireworks[ i ].draw();
+        fireworks[ i ].update( i );
+    }
+    var i = particles.length;
+    while( i-- ) {
+        particles[ i ].draw();
+        particles[ i ].update( i );
+    }
+}
 </script>
 
-<main>
+<main bind:this={element}>
     <canvas bind:this={canvas} class="canvas-fw" id="canvas">Canvas is not supported in your browser.</canvas>
 </main>
 
 
 <style>
 .canvas-fw {
-	cursor: crosshair;
 	display: block;
 }
 </style>

@@ -1,14 +1,15 @@
 <script>
-	import Door from '../Door.svelte';
+	import Door from '../components/Door.svelte';
 	import { onMount } from 'svelte';
-
     import doorStore from '../store.js';
-    
+	import { getContext } from 'svelte';
+	import Popup from '../components/PopUp.svelte';
+import store from '../store.js';
+	const { open } = getContext('simple-modal');
+
     export let name = "";
 
 	let calendarDays = [];
-
-	let currentDate = Date.now();
 
 	let nbDays = 1;
 
@@ -17,6 +18,7 @@
 	.map((a) => ({sort: Math.random(), value: a}))
 	.sort((a, b) => a.sort - b.sort)
 	.map((a) => a.value)
+	// random_door_numbers = door_numbers
 	
 	let offset = 0;
 	let isProd = __myapp.env.isProd;
@@ -25,11 +27,12 @@
 		offset = 7;
 	}
 
+	let displayError;
+
 	export let calendarDate={};
 
 	onMount(async () => {
-	// await fetch(__myapp.env.API_URL+"/daySinceFirstDec")
-	await fetch("https://advent-calendar-api-talan.cleverapps.io/daySinceFirstDec")
+	await fetch(__myapp.env.API_URL+"/daySinceFirstDec")
 		.then(r => r.json())
 		.then(data => {
 			if(data.daySinceFirstDec){
@@ -39,7 +42,6 @@
 					const day = parseInt(i) + 1
 					calendarDays.push({
 						day:day, 
-						canOpen:canOpen(day),
 						reward:calendarDate[day-1]?calendarDate[day-1]:"",
 						id:id
 					})
@@ -47,22 +49,59 @@
 				}
 				calendarDays = calendarDays
 			}
+		})
+		.catch(error => {
+			displayError = "ERROR QUERYING DATE API"
+			console.log("API fetch error");
+			console.log(error);
 		});
 	})
 
 	function canOpen(dayToCheck){
-		return (dayToCheck - nbDays <=0)
+		let dayInStore = (dayToCheck-1) <= $doorStore
+		let dayToOpenLessThanToday = (dayToCheck - nbDays <=0)
+		console.log("canOpen",dayToCheck, dayInStore, dayToOpenLessThanToday)
+		return (dayInStore && dayToOpenLessThanToday)
 	}
+
+	function isAlreadyOpened(dayToCheck){
+		console.log("isAlreadyOpened", dayToCheck)
+		console.log($doorStore)
+		const dayInStore = dayToCheck <= $doorStore
+		return dayInStore
+	}
+
 
 	function resetProgression(){
 		doorStore.reset()
 	}
 
+	let toto = 2
+
+	function showPopUpDoor(){
+		let doorConfig = {
+			reward : {
+				imagePath : "",
+				rewardLink : ""
+			},
+			canOpen : canOpen,
+			day : 1,
+			id : 102
+		}
+		showPopup(doorConfig)
+	}
+
+	const showPopup = (doorInfo) => {
+		open(Popup, { doorInfo: doorInfo });
+	};
+
 </script>
 
 <main>
 
-	<!-- stats - count particles --> 
+	{#if !isProd}
+		<button on:click={showPopUpDoor}>Show a popup!</button>
+	{/if}
 
 	<h1>🎄 <a class="title" href="/Changelog">Iterative</a> {name} By Talan! 🎄</h1>
 	<p>❤️ Made with love by Talan Labs ❤️</p>
@@ -72,16 +111,24 @@
 
 	<p>A vous de jouer !</p>
 
+	{#if displayError}
+		<h1>ERROR : </h1>
+		<h2>{displayError}</h2>
+	{/if}
+
 	<div class = "box">
 		{#each calendarDays as doorNumber}
 		<Door 
 			imagePath = {doorNumber.reward.imagePath}
-			rewardText = {doorNumber.reward.rewardText}
 			rewardLink = {doorNumber.reward.rewardLink}
 			doorNumber = {doorNumber.day} 
 			doorOpen = {doorNumber.day <= $doorStore}
-			canOpen = {doorNumber.canOpen}
-			doorId = {doorNumber.id}/>
+			canOpen = {canOpen}
+			isAlreadyOpened = {isAlreadyOpened}
+			doorId = {doorNumber.id}
+			size = {"small"}
+			action = {showPopup}
+		/>
 		{/each}
 	</div>
 
@@ -122,6 +169,13 @@
 		color: #e71616;
 		font-family: 'Nerko One', cursive;
 		font-size: 4em;
+		font-weight: 100;
+		margin-bottom: 10px;
+	}
+	h2 {
+		color: #e71616;
+		font-family: 'Nerko One', cursive;
+		font-size: 3em;
 		font-weight: 100;
 		margin-bottom: 10px;
 	}
