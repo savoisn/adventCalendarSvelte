@@ -1,4 +1,6 @@
 <script>
+  import doorStore from '.../../../store.js'
+
   export let doorNumber = 12;
   export let doorId = 1;
   export let canOpen = function(){};
@@ -8,15 +10,11 @@
   export let doorOpen = false;
   export let imageAlt = "";
   export let action = function(){};
-
-
   export let size = "small";
 
   export function sizes(){
     return door_sizes.keys();
   }
-
-  import doorStore from '.../../../store.js'
 
   function toggleDoor() {
     let doorInfo = {
@@ -44,6 +42,7 @@
       doorOpen=false;
     }
   } 
+
   let emojis = [
     "🎅",
     "🤶",

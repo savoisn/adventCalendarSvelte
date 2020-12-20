@@ -63,7 +63,7 @@ export default {
 				isProd: production,
 				API_URL: process.env.API_URL,
 				// ...config().parsed // attached the .env config
-			}
+				}
 			}),
 		}),
 		json({

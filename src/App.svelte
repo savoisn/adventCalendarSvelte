@@ -12,7 +12,7 @@
 
     import * as changelogs from '../changelog.json'
     import * as calendarData from '../calendar-talan-data.json'
-import Modal from './components/Modal.svelte';
+	import Modal from './components/Modal.svelte';
 	export let name='';
 
 	export let url = "";

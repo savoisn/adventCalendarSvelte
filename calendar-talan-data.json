@@ -99,6 +99,26 @@
 			"imagePath":"/build/images/20.png",
 			"rewardText":"",
 			"rewardLink":""
+		},
+		"20":{
+			"imagePath":"/build/images/21.png",
+			"rewardText":"",
+			"rewardLink":"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5URFVBUjlVWUtPRDlCNjRLNzUwT1YyNVZXMi4u"
+		},
+		"21":{
+			"imagePath":"/build/images/22.png",
+			"rewardText":"",
+			"rewardLink":"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UOE82S1BXVllUODVOOVdXM0cyVE1CSDdYRC4u"
+		},
+		"22":{
+			"imagePath":"/build/images/23.png",
+			"rewardText":"",
+			"rewardLink":"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UOE82S1BXVllUODVOOVdXM0cyVE1CSDdYRC4u"
+		},
+		"23":{
+			"imagePath":"/build/images/24.png",
+			"rewardText":"",
+			"rewardLink":"https://forms.office.com/Pages/ResponsePage.aspx?id=UoFsLNBEEUWcmgqQTMfueMK0lpWymFpHisRfHRqKlr5UNDBaT09SMVpHVjBQUUlDWDdDVks3UEFDUS4u"
 		}
 	}
 }

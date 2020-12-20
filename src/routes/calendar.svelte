@@ -4,7 +4,6 @@
     import doorStore from '../store.js';
 	import { getContext } from 'svelte';
 	import Popup from '../components/PopUp.svelte';
-import store from '../store.js';
 	const { open } = getContext('simple-modal');
 
     export let name = "";
@@ -13,7 +12,7 @@ import store from '../store.js';
 
 	let nbDays = 1;
 
-	let door_numbers = [...Array(25).keys()]
+	let door_numbers = [...Array(24).keys()]
 	let random_door_numbers = door_numbers
 	.map((a) => ({sort: Math.random(), value: a}))
 	.sort((a, b) => a.sort - b.sort)
@@ -75,8 +74,6 @@ import store from '../store.js';
 	function resetProgression(){
 		doorStore.reset()
 	}
-
-	let toto = 2
 
 	function showPopUpDoor(){
 		let doorConfig = {
