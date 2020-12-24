@@ -4,6 +4,7 @@
     import doorStore from '../store.js';
 	import { getContext } from 'svelte';
 	import Popup from '../components/PopUp.svelte';
+	import PopUpSeeYa from '../components/PopUpSeeYa.svelte';
 	const { open } = getContext('simple-modal');
 
     export let name = "";
@@ -23,38 +24,50 @@
 	let isProd = __myapp.env.isProd;
 
 	if(!isProd){
-		offset = 7;
+		offset = 1;
 	}
 
 	let displayError;
 
 	export let calendarDate={};
 
+	let nbDaysSinceFirstDec;
+
 	onMount(async () => {
-	await fetch(__myapp.env.API_URL+"/daySinceFirstDec")
+		let daySinceFirstDec = await fetch(__myapp.env.API_URL+"/daySinceFirstDec")
 		.then(r => r.json())
 		.then(data => {
-			if(data.daySinceFirstDec){
-				nbDays = parseInt(data.daySinceFirstDec) + offset;
-				let id = 1 //j'ai honte je suis desole devant le reste du monde mais j'ai pas le temps... :D
-				for(let i of random_door_numbers){
-					const day = parseInt(i) + 1
-					calendarDays.push({
-						day:day, 
-						reward:calendarDate[day-1]?calendarDate[day-1]:"",
-						id:id
-					})
-					id++;
-				}
-				calendarDays = calendarDays
-			}
+			return data.daySinceFirstDec;
 		})
 		.catch(error => {
 			displayError = "ERROR QUERYING DATE API"
 			console.log("API fetch error");
 			console.log(error);
 		});
+
+		if(daySinceFirstDec){
+			nbDays = parseInt(daySinceFirstDec) + offset;
+			nbDaysSinceFirstDec = nbDays
+			let id = 1 //j'ai honte je suis desole devant le reste du monde mais j'ai pas le temps... :D
+			for(let i of random_door_numbers){
+				const day = parseInt(i) + 1
+				calendarDays.push({
+					day:day, 
+					reward:calendarDate[day-1]?calendarDate[day-1]:"",
+					id:id
+				})
+				id++;
+			}
+			calendarDays = calendarDays
+			console.log(nbDaysSinceFirstDec)
+			if(nbDaysSinceFirstDec >= 24){
+				open(PopUpSeeYa);
+			}
+
+
+		}
 	})
+
 
 	function canOpen(dayToCheck){
 		let dayInStore = (dayToCheck-1) <= $doorStore
