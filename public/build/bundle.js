@@ -3855,7 +3855,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(button, file$5, 112, 2, 2427);
+    			add_location(button, file$5, 112, 2, 2426);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -3916,9 +3916,9 @@ var app = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(h1, "class", "svelte-1dhn3qf");
-    			add_location(h1, file$5, 124, 2, 2806);
+    			add_location(h1, file$5, 124, 2, 2805);
     			attr_dev(h2, "class", "svelte-1dhn3qf");
-    			add_location(h2, file$5, 125, 2, 2826);
+    			add_location(h2, file$5, 125, 2, 2825);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -4222,36 +4222,36 @@ var app = (function () {
     		h: function hydrate() {
     			attr_dev(a0, "class", "title svelte-1dhn3qf");
     			attr_dev(a0, "href", "/Changelog");
-    			add_location(a0, file$5, 115, 8, 2499);
+    			add_location(a0, file$5, 115, 8, 2498);
     			attr_dev(h1, "class", "svelte-1dhn3qf");
-    			add_location(h1, file$5, 115, 1, 2492);
+    			add_location(h1, file$5, 115, 1, 2491);
     			attr_dev(p0, "class", "svelte-1dhn3qf");
-    			add_location(p0, file$5, 116, 1, 2574);
+    			add_location(p0, file$5, 116, 1, 2573);
     			attr_dev(p1, "class", "svelte-1dhn3qf");
-    			add_location(p1, file$5, 118, 1, 2618);
+    			add_location(p1, file$5, 118, 1, 2617);
     			attr_dev(p2, "class", "svelte-1dhn3qf");
-    			add_location(p2, file$5, 119, 1, 2690);
+    			add_location(p2, file$5, 119, 1, 2689);
     			attr_dev(p3, "class", "svelte-1dhn3qf");
-    			add_location(p3, file$5, 121, 1, 2758);
+    			add_location(p3, file$5, 121, 1, 2757);
     			attr_dev(div0, "class", "box svelte-1dhn3qf");
-    			add_location(div0, file$5, 128, 1, 2859);
+    			add_location(div0, file$5, 128, 1, 2858);
     			attr_dev(p4, "class", "svelte-1dhn3qf");
-    			add_location(p4, file$5, 145, 1, 3262);
+    			add_location(p4, file$5, 145, 1, 3261);
     			attr_dev(p5, "class", "svelte-1dhn3qf");
-    			add_location(p5, file$5, 147, 1, 3461);
-    			add_location(div1, file$5, 144, 1, 3255);
-    			add_location(br, file$5, 150, 1, 3554);
+    			add_location(p5, file$5, 147, 1, 3460);
+    			add_location(div1, file$5, 144, 1, 3254);
+    			add_location(br, file$5, 150, 1, 3553);
     			attr_dev(p6, "class", "svelte-1dhn3qf");
-    			add_location(p6, file$5, 151, 1, 3561);
+    			add_location(p6, file$5, 151, 1, 3560);
     			attr_dev(a1, "class", "link svelte-1dhn3qf");
     			attr_dev(a1, "href", "/Changelog");
-    			add_location(a1, file$5, 152, 29, 3677);
+    			add_location(a1, file$5, 152, 29, 3676);
     			attr_dev(p7, "class", "svelte-1dhn3qf");
-    			add_location(p7, file$5, 152, 1, 3649);
-    			add_location(button, file$5, 153, 0, 3734);
-    			add_location(div2, file$5, 149, 0, 3547);
+    			add_location(p7, file$5, 152, 1, 3648);
+    			add_location(button, file$5, 153, 0, 3733);
+    			add_location(div2, file$5, 149, 0, 3546);
     			attr_dev(main, "class", "svelte-1dhn3qf");
-    			add_location(main, file$5, 109, 0, 2402);
+    			add_location(main, file$5, 109, 0, 2401);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
@@ -4416,7 +4416,7 @@ var app = (function () {
     	let isProd = {"env":{"isProd":false,"API_URL":"http://localhost:8080"}}.env.isProd;
 
     	if (!isProd) {
-    		offset = 1;
+    		offset = 0;
     	}
 
     	let displayError;
@@ -4452,7 +4452,7 @@ var app = (function () {
     			$$invalidate(1, calendarDays);
     			console.log(nbDaysSinceFirstDec);
 
-    			if (nbDaysSinceFirstDec >= 24) {
+    			if (nbDaysSinceFirstDec > 24) {
     				open(PopUpSeeYa);
     			}
     		}

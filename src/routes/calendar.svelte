@@ -24,7 +24,7 @@
 	let isProd = __myapp.env.isProd;
 
 	if(!isProd){
-		offset = 1;
+		offset = 0;
 	}
 
 	let displayError;
@@ -60,7 +60,7 @@
 			}
 			calendarDays = calendarDays
 			console.log(nbDaysSinceFirstDec)
-			if(nbDaysSinceFirstDec >= 24){
+			if(nbDaysSinceFirstDec > 24){
 				open(PopUpSeeYa);
 			}
 
